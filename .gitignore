@@ -1,0 +1,4 @@
+dsa-venv/
+__pycache__/
+*.pt
+fine_tune_project/fine_tuned_models/

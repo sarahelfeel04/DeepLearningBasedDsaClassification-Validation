@@ -81,9 +81,9 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
             logit_combined_tensor = torch.tensor([[logit_combined]], dtype=torch.float32).to(device1)
             running_loss_combined += loss_fn(logit_combined_tensor, labels_frontal).item()
 
-            estimate_frontal = THROMBUS_NO if prob_frontal <= 0.5 else THROMBUS_YES
-            estimate_lateral = THROMBUS_NO if prob_lateral <= 0.5 else THROMBUS_YES
-            estimate_combined = THROMBUS_NO if prob_combined <= 0.5 else THROMBUS_YES
+            estimate_frontal = THROMBUS_NO if prob_frontal <= 0.55 else THROMBUS_YES
+            estimate_lateral = THROMBUS_NO if prob_lateral <= 0.55 else THROMBUS_YES
+            estimate_combined = THROMBUS_NO if prob_combined <= 0.55 else THROMBUS_YES
 
             label_value = labels_frontal.item()
             is_thrombus_free = label_value <= LABEL_THRESHOLD

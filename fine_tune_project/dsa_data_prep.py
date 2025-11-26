@@ -5,9 +5,9 @@ import nibabel
 from torch.utils.data import Dataset, DataLoader
 from sklearn.model_selection import train_test_split
 import torch
-# Assumed dependencies from the repository
-from utils.ImageUtils import ImageUtils
-from utils.DataAugmentation import DataAugmentation
+# Assumed dependencies from the repository (use package-relative imports)
+from fine_tune_project.utils.ImageUtils import ImageUtils
+from fine_tune_project.utils.DataAugmentation import DataAugmentation
 
 # Define labels based on original paper values (THROMBUS_NO < 0.5, THROMBUS_YES > 0.5)
 THROMBUS_NO = 0.214  # T3 -> Thrombus Free (Negative class)

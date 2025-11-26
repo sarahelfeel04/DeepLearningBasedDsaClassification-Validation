@@ -14,15 +14,15 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import math
 
-from dsa_data_prep import FineTuneDsaDataset, THROMBUS_NO, THROMBUS_YES
-from CnnLstmModel import CnnLstmModel
+from fine_tune_project.dsa_data_prep import FineTuneDsaDataset, THROMBUS_NO, THROMBUS_YES
+from fine_tune_project.utils.CnnLstmModel import CnnLstmModel
 
 # -------------------------------------------------------------------------
 # Configuration (MUST MATCH fine_tune_dsa.py for consistent test split)
 # -------------------------------------------------------------------------
 DATA_ROOT_PATH = "/media/nami/FastDataSpace/ThromboMap-Validation/datasets/Channel0-DataTypeUnsignedShort-Values0to4000"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_PATH = os.path.join(SCRIPT_DIR, "fine_tuned_models", "china_data_unfrozen_cnn")
+OUTPUT_PATH = os.path.join("/media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tune_project/fine_tuned_models", "china_data_unfrozen_cnn_50epochs")
 TRAIN_RATIO = 0.7
 VAL_RATIO = 0.15
 TEST_RATIO = 0.15

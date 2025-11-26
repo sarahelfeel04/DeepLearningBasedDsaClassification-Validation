@@ -1,0 +1,43 @@
+Preparing test split...
+Using same split parameters as training: train=0.7, val=0.15, test=0.15, seed=42
+Test set contains 37 sequences (not used during training)
+Loading checkpoints:
+  Frontal: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tune_project/fine_tuned_models/china_data_unfrozen_cnn_50epochs/frontal_fine_tuned_best_mcc.pt
+  Lateral: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tune_project/fine_tuned_models/china_data_unfrozen_cnn_50epochs/lateral_fine_tuned_best_mcc.pt
+
+Collecting predictions from test set...
+Collecting predictions: 100%|██████████████████████████████████████████████████████████████████████████████████████| 37/37 [00:08<00:00,  4.13batch/s]
+
+Collected 37 predictions
+Probability range: [0.2194, 0.7264]
+Label distribution: 20 negative, 17 positive
+
+Calculating ROC curve and AUC...
+AUC: 0.8441
+
+Finding best MCC threshold...
+Best MCC: 0.6747 at threshold: 0.4900
+
+Generating plots...
+
+Plot saved to: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tune_project/evaluation/roc_curve_and_mcc.png
+
+======================================================================
+THRESHOLD OPTIMIZATION RESULTS
+======================================================================
+
+AUC (Area Under ROC Curve): 0.8441
+Interpretation: Good
+
+Best MCC Threshold: 0.4900
+Best MCC Value: 0.6747
+
+Metrics at Best MCC Threshold (0.4900):
+  Accuracy: 0.8378
+  Sensitivity (Recall): 0.7647
+  Specificity: 0.9000
+  Confusion Matrix:
+    TP: 13, TN: 18, FP: 2, FN: 4
+
+======================================================================
+Analysis complete!

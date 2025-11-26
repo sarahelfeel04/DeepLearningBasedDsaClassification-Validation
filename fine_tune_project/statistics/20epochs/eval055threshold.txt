@@ -1,0 +1,19 @@
+============================================================
+INDIVIDUAL MODEL RESULTS:
+============================================================
+Test Loss -> Frontal: 0.7089, Lateral: 0.6077
+acc_front = 0.5135135135135135 ; prec_front = 0.4444444444444444 ; recall_front = 0.23529411764705882; mcc_front = -0.017081667951891415
+acc_lat = 0.8378378378378378 ; prec_lat = 0.9230769230769231 ; recall_lat = 0.7058823529411765; mcc_lat = 0.6846807339122728
+
+============================================================
+COMBINED MODEL RESULTS (Frontal + Lateral averaged):
+============================================================
+Test Loss (Combined): 0.6273
+Accuracy: 0.8649
+Precision: 1.0000
+Recall: 0.7059
+MCC: 0.7515
+
+Confusion Matrix (Combined):
+  TP: 12, FP: 0
+  TN: 20, FN: 5

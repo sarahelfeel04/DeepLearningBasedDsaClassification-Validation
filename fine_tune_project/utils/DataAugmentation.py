@@ -14,7 +14,7 @@ cv2.ocl.setUseOpenCL(False)
 import albumentations as albu
 import matplotlib.pyplot as plt
 import torch
-from utils.IndexTracker import IndexTracker
+from .IndexTracker import IndexTracker
 import copy
 from numba import jit
 

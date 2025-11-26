@@ -12,9 +12,9 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from dsa_data_prep import FineTuneDsaDataset, THROMBUS_NO, THROMBUS_YES
-from CnnLstmModel import CnnLstmModel
-from ModelEvaluation import ModelEvaluation
+from fine_tune_project.dsa_data_prep import FineTuneDsaDataset, THROMBUS_NO, THROMBUS_YES
+from fine_tune_project.utils.CnnLstmModel import CnnLstmModel
+from fine_tune_project.evaluation.ModelEvaluation import ModelEvaluation
 
 # -------------------------------------------------------------------------
 # Configuration (MUST MATCH fine_tune_dsa.py for consistent test split)
@@ -22,7 +22,7 @@ from ModelEvaluation import ModelEvaluation
 DATA_ROOT_PATH = "/media/nami/FastDataSpace/ThromboMap-Validation/datasets/Channel0-DataTypeUnsignedShort-Values0to4000"
 # Get the directory where this script is located
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_PATH = os.path.join(SCRIPT_DIR, "fine_tuned_models", "china_data_unfrozen_cnn")
+OUTPUT_PATH = os.path.join("/media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tune_project/fine_tuned_models", "china_data_unfrozen_cnn_50epochs")
 TRAIN_RATIO = 0.7
 VAL_RATIO = 0.15
 TEST_RATIO = 0.15
@@ -81,9 +81,9 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
             logit_combined_tensor = torch.tensor([[logit_combined]], dtype=torch.float32).to(device1)
             running_loss_combined += loss_fn(logit_combined_tensor, labels_frontal).item()
 
-            estimate_frontal = THROMBUS_NO if prob_frontal <= 0.55 else THROMBUS_YES
-            estimate_lateral = THROMBUS_NO if prob_lateral <= 0.55 else THROMBUS_YES
-            estimate_combined = THROMBUS_NO if prob_combined <= 0.55 else THROMBUS_YES
+            estimate_frontal = THROMBUS_NO if prob_frontal <= 0.5 else THROMBUS_YES
+            estimate_lateral = THROMBUS_NO if prob_lateral <= 0.5 else THROMBUS_YES
+            estimate_combined = THROMBUS_NO if prob_combined <= 0.5 else THROMBUS_YES
 
             label_value = labels_frontal.item()
             is_thrombus_free = label_value <= LABEL_THRESHOLD

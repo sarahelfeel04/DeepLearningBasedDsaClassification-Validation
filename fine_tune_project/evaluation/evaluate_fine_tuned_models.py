@@ -22,7 +22,7 @@ from fine_tune_project.evaluation.ModelEvaluation import ModelEvaluation
 DATA_ROOT_PATH = "/media/nami/FastDataSpace/ThromboMap-Validation/datasets/Channel0-DataTypeUnsignedShort-Values0to4000"
 # Get the directory where this script is located
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_PATH = os.path.join("/media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tune_project/fine_tuned_models", "china_data_unfrozen_cnn_50epochs")
+OUTPUT_PATH = os.path.join("/media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tune_project/fine_tuned_models", "china_data_unfrozen_cnn_20_epochs")
 TRAIN_RATIO = 0.7
 VAL_RATIO = 0.15
 TEST_RATIO = 0.15
@@ -47,6 +47,46 @@ def load_model(device, checkpoint_path):
     return model
 
 
+def calculate_auc(probabilities, labels):
+    """Calculate AUC (Area Under ROC Curve) using trapezoidal rule."""
+    # Convert labels to binary (0 or 1)
+    binary_labels = (labels > LABEL_THRESHOLD).astype(int)
+    
+    # Count positives and negatives
+    n_positive = np.sum(binary_labels == 1)
+    n_negative = np.sum(binary_labels == 0)
+    
+    if n_positive == 0 or n_negative == 0:
+        return None  # Cannot calculate AUC with only one class
+    
+    # Sort by probability (descending)
+    sorted_indices = np.argsort(probabilities)[::-1]
+    sorted_probs = probabilities[sorted_indices]
+    sorted_labels = binary_labels[sorted_indices]
+    
+    # Initialize arrays
+    tpr = [0.0]  # True Positive Rate (Sensitivity)
+    fpr = [0.0]  # False Positive Rate (1 - Specificity)
+    
+    TP = 0
+    FP = 0
+    
+    # Calculate TPR and FPR at each threshold
+    for i in range(len(sorted_probs)):
+        if sorted_labels[i] == 1:
+            TP += 1
+        else:
+            FP += 1
+        
+        tpr.append(TP / n_positive)
+        fpr.append(FP / n_negative)
+    
+    # Calculate AUC using trapezoidal rule
+    auc = np.trapz(tpr, fpr)
+    
+    return auc
+
+
 def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
     loss_fn = nn.BCEWithLogitsLoss()
     eval_metrics = ModelEvaluation()
@@ -55,6 +95,10 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
     running_loss_frontal = 0.0
     running_loss_lateral = 0.0
     running_loss_combined = 0.0
+    
+    # Store all probabilities and labels for AUC calculation
+    all_probs_combined = []
+    all_labels = []
 
     with torch.no_grad():
         for batch in tqdm(dataloader, desc="Testing", unit="batch"):
@@ -74,6 +118,10 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
             prob_lateral = torch.sigmoid(output_lateral).item()
             prob_combined = (prob_frontal + prob_lateral) / 2.0
             
+            # Store for AUC calculation
+            all_probs_combined.append(prob_combined)
+            all_labels.append(labels_frontal.item())
+            
             # Convert combined probability back to logits for loss calculation
             # prob = sigmoid(logit) => logit = log(prob / (1 - prob))
             logit_combined = np.log(prob_combined / (1 - prob_combined + 1e-8))
@@ -81,9 +129,9 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
             logit_combined_tensor = torch.tensor([[logit_combined]], dtype=torch.float32).to(device1)
             running_loss_combined += loss_fn(logit_combined_tensor, labels_frontal).item()
 
-            estimate_frontal = THROMBUS_NO if prob_frontal <= 0.5 else THROMBUS_YES
-            estimate_lateral = THROMBUS_NO if prob_lateral <= 0.5 else THROMBUS_YES
-            estimate_combined = THROMBUS_NO if prob_combined <= 0.5 else THROMBUS_YES
+            estimate_frontal = THROMBUS_NO if prob_frontal <= 0.55 else THROMBUS_YES
+            estimate_lateral = THROMBUS_NO if prob_lateral <= 0.55 else THROMBUS_YES
+            estimate_combined = THROMBUS_NO if prob_combined <= 0.55 else THROMBUS_YES
 
             label_value = labels_frontal.item()
             is_thrombus_free = label_value <= LABEL_THRESHOLD
@@ -106,7 +154,13 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
     avg_loss_frontal = running_loss_frontal / n_batches
     avg_loss_lateral = running_loss_lateral / n_batches
     avg_loss_combined = running_loss_combined / n_batches
-    return avg_loss_frontal, avg_loss_lateral, avg_loss_combined, eval_metrics, combined_metrics
+    
+    # Calculate AUC
+    all_probs_combined = np.array(all_probs_combined)
+    all_labels = np.array(all_labels)
+    auc = calculate_auc(all_probs_combined, all_labels)
+    
+    return avg_loss_frontal, avg_loss_lateral, avg_loss_combined, eval_metrics, combined_metrics, auc
 
 
 def main():
@@ -137,7 +191,7 @@ def main():
     model_lateral = load_model(device2, LATERAL_CKPT)
 
     print("Evaluating on the test set...")
-    test_loss_frontal, test_loss_lateral, test_loss_combined, metrics, combined_metrics = evaluate(
+    test_loss_frontal, test_loss_lateral, test_loss_combined, metrics, combined_metrics, auc = evaluate(
         model_frontal, model_lateral, data_loader_test, device1, device2
     )
 
@@ -155,6 +209,10 @@ def main():
     print(f"Precision: {combined_metrics.getPrecisionFrontal():.4f}")
     print(f"Recall: {combined_metrics.getRecallFrontal():.4f}")
     print(f"MCC: {combined_metrics.getMccFrontal():.4f}")
+    if auc is not None:
+        print(f"AUC: {auc:.4f}")
+    else:
+        print("AUC: Cannot calculate (only one class present in test set)")
     print(f"\nConfusion Matrix (Combined):")
     print(f"  TP: {combined_metrics.TP_frontal}, FP: {combined_metrics.FP_frontal}")
     print(f"  TN: {combined_metrics.TN_frontal}, FN: {combined_metrics.FN_frontal}")

@@ -8,13 +8,13 @@ Created on Wed Nov  6 16:56:53 2019
 
 import cv2
 import numpy as np
-import CustomTransforms
+from . import CustomTransforms
 cv2.setNumThreads(0)
 cv2.ocl.setUseOpenCL(False)
 import albumentations as albu
 import matplotlib.pyplot as plt
 import torch
-from IndexTracker import IndexTracker
+from utils.IndexTracker import IndexTracker
 import copy
 from numba import jit
 

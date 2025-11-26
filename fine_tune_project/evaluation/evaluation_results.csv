@@ -1,0 +1,38 @@
+filename_frontal,filename_lateral,ground_truth,ground_truth_value,prob_frontal,prob_lateral,prob_combined,prediction_frontal,prediction_lateral,prediction_combined,correct_combined
+RAW_0107_T0_C_before_anon_ch0.nii.gz,RAW_0107_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.5715194344520569,0.7953179478645325,0.6834186911582947,Thrombus,Thrombus,Thrombus,Yes
+RAW_0392_T3_C_anon_ch0.nii.gz,RAW_0392_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.5473024249076843,0.34431537985801697,0.44580890238285065,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0250_T3_C_after_anon_ch0.nii.gz,RAW_0250_T3_S_after_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.6463806629180908,0.20633664727210999,0.4263586550951004,Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0145_T0_C_before_anon_ch0.nii.gz,RAW_0145_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.612724781036377,0.7930929660797119,0.7029088735580444,Thrombus,Thrombus,Thrombus,Yes
+RAW_0010_T0_C_before_anon_ch0.nii.gz,RAW_0010_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.5364249348640442,0.7913066744804382,0.6638658046722412,No Thrombus,Thrombus,Thrombus,Yes
+RAW_0289_T0_C_before_anon_ch0.nii.gz,RAW_0289_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.4252479672431946,0.7902244329452515,0.607736200094223,No Thrombus,Thrombus,Thrombus,Yes
+RAW_0318_T3_C_before_anon_ch0.nii.gz,RAW_0318_T3_S_before_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.5057679414749146,0.2153511494398117,0.36055954545736313,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0412_T3_C_anon_ch0.nii.gz,RAW_0412_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.3421657979488373,0.35789260268211365,0.35002920031547546,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0094_T3_C_after_anon_ch0.nii.gz,RAW_0094_T3_S_after_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.5903992056846619,0.2516908645629883,0.4210450351238251,Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0283_T3_C_after_anon_ch0.nii.gz,RAW_0283_T3_S_after_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.4757786691188812,0.21439431607723236,0.3450864925980568,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0330_T0_C_before_anon_ch0.nii.gz,RAW_0330_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.4443778693675995,0.7953794598579407,0.6198786646127701,No Thrombus,Thrombus,Thrombus,Yes
+RAW_0350_T0_C_anon_ch0.nii.gz,RAW_0350_T0_S_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.37864312529563904,0.22575725615024567,0.30220019072294235,No Thrombus,No Thrombus,No Thrombus,No
+RAW_0014_T3_C_anon_ch0.nii.gz,RAW_0014_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.5133501887321472,0.2171318531036377,0.36524102091789246,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0386_T0_C_anon_ch0.nii.gz,RAW_0386_T0_S_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.5185319781303406,0.609771192073822,0.5641515851020813,No Thrombus,Thrombus,Thrombus,Yes
+RAW_0056_T3_C_anon_ch0.nii.gz,RAW_0056_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.5030111074447632,0.30581793189048767,0.4044145196676254,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0382_T3_C_anon_ch0.nii.gz,RAW_0382_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.29798492789268494,0.2993762791156769,0.2986806035041809,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0308_T3_C_after_anon_ch0.nii.gz,RAW_0308_T3_S_after_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.4469020962715149,0.22732847929000854,0.3371152877807617,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0187_T0_C_anon_ch0.nii.gz,RAW_0187_T0_S_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.510334312915802,0.798035740852356,0.654185026884079,No Thrombus,Thrombus,Thrombus,Yes
+RAW_0088_T3_C_anon_ch0.nii.gz,RAW_0088_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.5981071591377258,0.2165221869945526,0.4073146730661392,Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0352_T3_C_after_anon_ch0.nii.gz,RAW_0352_T3_S_after_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.5829722881317139,0.2439856082201004,0.41347894817590714,Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0309_T3_C_anon_ch0.nii.gz,RAW_0309_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.32020044326782227,0.21718701720237732,0.2686937302350998,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0020_T0_C_anon_ch0.nii.gz,RAW_0020_T0_S_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.2864472568035126,0.2338281124830246,0.2601376846432686,No Thrombus,No Thrombus,No Thrombus,No
+RAW_0234_T0_C_before_anon_ch0.nii.gz,RAW_0234_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.5770169496536255,0.6432255506515503,0.6101212501525879,Thrombus,Thrombus,Thrombus,Yes
+RAW_0276_T0_C_before_anon_ch0.nii.gz,RAW_0276_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.42598122358322144,0.7515390515327454,0.5887601375579834,No Thrombus,Thrombus,Thrombus,Yes
+RAW_0394_T3_C_anon_ch0.nii.gz,RAW_0394_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.574504554271698,0.30899178981781006,0.44174817204475403,Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0265_T0_C_anon_ch0.nii.gz,RAW_0265_T0_S_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.6135557293891907,0.7381763458251953,0.675866037607193,Thrombus,Thrombus,Thrombus,Yes
+RAW_0349_T3_C_after_anon_ch0.nii.gz,RAW_0349_T3_S_after_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.38286182284355164,0.223368838429451,0.3031153306365013,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0127_T0_C_before_anon_ch0.nii.gz,RAW_0127_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.28946444392204285,0.5466516613960266,0.41805805265903473,No Thrombus,No Thrombus,No Thrombus,No
+RAW_0358_T3_C_after_anon_ch0.nii.gz,RAW_0358_T3_S_after_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.44908905029296875,0.2179999202489853,0.333544485270977,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0210_T3_C_anon_ch0.nii.gz,RAW_0210_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.3102615773677826,0.21331003308296204,0.2617858052253723,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0332_T3_C_after_anon_ch0.nii.gz,RAW_0332_T3_S_after_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.286226749420166,0.21409082412719727,0.25015878677368164,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0191_T0_C_before_anon_ch0.nii.gz,RAW_0191_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.5267118215560913,0.8041413426399231,0.6654265820980072,No Thrombus,Thrombus,Thrombus,Yes
+RAW_0085_T3_C_after_anon_ch0.nii.gz,RAW_0085_T3_S_after_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.5255963206291199,0.5589572787284851,0.5422767996788025,No Thrombus,Thrombus,No Thrombus,Yes
+RAW_0096_T0_C_before_anon_ch0.nii.gz,RAW_0096_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.41835281252861023,0.7936620116233826,0.6060074120759964,No Thrombus,Thrombus,Thrombus,Yes
+RAW_0002_T0_C_anon_ch0.nii.gz,RAW_0002_T0_S_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.5184053182601929,0.24590089917182922,0.38215310871601105,No Thrombus,No Thrombus,No Thrombus,No
+RAW_0240_T3_C_anon_ch0.nii.gz,RAW_0240_T3_S_anon_ch0.nii.gz,No Thrombus,0.21400000154972076,0.47958141565322876,0.19573119282722473,0.33765630424022675,No Thrombus,No Thrombus,No Thrombus,Yes
+RAW_0339_T0_C_before_anon_ch0.nii.gz,RAW_0339_T0_S_before_anon_ch0.nii.gz,Thrombus,0.7860000133514404,0.4813787341117859,0.2688433825969696,0.37511105835437775,No Thrombus,No Thrombus,No Thrombus,No

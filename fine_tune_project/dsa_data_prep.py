@@ -155,6 +155,9 @@ class FineTuneDsaDataset(Dataset):
         # 5. Final conversion and label return
         tensor_data = augmentation.convertToTensor()
         tensor_data['target_label'] = torch.tensor(entry['target_label'], dtype=torch.float).unsqueeze(0)
+        # Include file paths for evaluation tracking
+        tensor_data['filename'] = entry['filename']
+        tensor_data['filenameOtherView'] = entry['filenameOtherView']
         
         return tensor_data
 

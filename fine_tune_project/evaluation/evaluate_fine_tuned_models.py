@@ -6,6 +6,7 @@ Uses the same split logic as fine_tune_dsa.py to ensure consistency.
 """
 
 import os
+import csv
 import numpy as np
 import torch
 import torch.nn as nn
@@ -45,6 +46,29 @@ def load_model(device, checkpoint_path):
     model.eval()
     model.requires_grad_(False)
     return model
+
+
+def save_results_to_csv(csv_results, output_path):
+    """Save evaluation results to CSV file."""
+    if not csv_results:
+        print("Warning: No results to save to CSV.")
+        return
+    
+    csv_file = os.path.join(output_path, "evaluation_results.csv")
+    fieldnames = [
+        'filename_frontal', 'filename_lateral', 'ground_truth', 'ground_truth_value',
+        'prob_frontal', 'prob_lateral', 'prob_combined',
+        'prediction_frontal', 'prediction_lateral', 'prediction_combined',
+        'correct_combined'
+    ]
+    
+    with open(csv_file, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(csv_results)
+    
+    print(f"\nResults saved to: {csv_file}")
+    return csv_file
 
 
 def calculate_auc(probabilities, labels):
@@ -99,6 +123,9 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
     # Store all probabilities and labels for AUC calculation
     all_probs_combined = []
     all_labels = []
+    
+    # Store results for CSV export
+    csv_results = []
 
     with torch.no_grad():
         for batch in tqdm(dataloader, desc="Testing", unit="batch"):
@@ -106,6 +133,10 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
             images_frontal = batch["image"].to(device=device1, dtype=torch.float)
             labels_lateral = batch["target_label"].to(device=device2, dtype=torch.float)
             images_lateral = batch["imageOtherView"].to(device=device2, dtype=torch.float)
+            
+            # Get file paths from batch (handle both list and single value cases)
+            filename_frontal = batch["filename"][0] if isinstance(batch["filename"], (list, tuple)) else batch["filename"]
+            filename_lateral = batch["filenameOtherView"][0] if isinstance(batch["filenameOtherView"], (list, tuple)) else batch["filenameOtherView"]
 
             output_frontal = model_frontal(images_frontal)
             output_lateral = model_lateral(images_lateral)
@@ -135,6 +166,22 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
 
             label_value = labels_frontal.item()
             is_thrombus_free = label_value <= LABEL_THRESHOLD
+            
+            # Store results for CSV
+            csv_results.append({
+                'filename_frontal': filename_frontal,
+                'filename_lateral': filename_lateral,
+                'ground_truth': 'Thrombus' if not is_thrombus_free else 'No Thrombus',
+                'ground_truth_value': label_value,
+                'prob_frontal': prob_frontal,
+                'prob_lateral': prob_lateral,
+                'prob_combined': prob_combined,
+                'prediction_frontal': 'Thrombus' if estimate_frontal == THROMBUS_YES else 'No Thrombus',
+                'prediction_lateral': 'Thrombus' if estimate_lateral == THROMBUS_YES else 'No Thrombus',
+                'prediction_combined': 'Thrombus' if estimate_combined == THROMBUS_YES else 'No Thrombus',
+                'correct_combined': 'Yes' if ((is_thrombus_free and estimate_combined == THROMBUS_NO) or 
+                                             (not is_thrombus_free and estimate_combined == THROMBUS_YES)) else 'No'
+            })
 
             # Individual model metrics
             if is_thrombus_free:
@@ -160,7 +207,7 @@ def evaluate(model_frontal, model_lateral, dataloader, device1, device2):
     all_labels = np.array(all_labels)
     auc = calculate_auc(all_probs_combined, all_labels)
     
-    return avg_loss_frontal, avg_loss_lateral, avg_loss_combined, eval_metrics, combined_metrics, auc
+    return avg_loss_frontal, avg_loss_lateral, avg_loss_combined, eval_metrics, combined_metrics, auc, csv_results
 
 
 def main():
@@ -191,7 +238,7 @@ def main():
     model_lateral = load_model(device2, LATERAL_CKPT)
 
     print("Evaluating on the test set...")
-    test_loss_frontal, test_loss_lateral, test_loss_combined, metrics, combined_metrics, auc = evaluate(
+    test_loss_frontal, test_loss_lateral, test_loss_combined, metrics, combined_metrics, auc, csv_results = evaluate(
         model_frontal, model_lateral, data_loader_test, device1, device2
     )
 
@@ -216,6 +263,9 @@ def main():
     print(f"\nConfusion Matrix (Combined):")
     print(f"  TP: {combined_metrics.TP_frontal}, FP: {combined_metrics.FP_frontal}")
     print(f"  TN: {combined_metrics.TN_frontal}, FN: {combined_metrics.FN_frontal}")
+    
+    # Save results to CSV
+    save_results_to_csv(csv_results, OUTPUT_PATH)
 
 
 if __name__ == "__main__":

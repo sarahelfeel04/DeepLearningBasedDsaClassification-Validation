@@ -9,9 +9,9 @@ import os
 from tqdm import tqdm
 
 # --- Import modified Dataset and repository components ---
-from dsa_data_prep import FineTuneDsaDataset, THROMBUS_NO, THROMBUS_YES 
-from utils.CnnLstmModel import CnnLstmModel 
-from evaluation.ModelEvaluation import ModelEvaluation 
+from .dsa_data_prep import FineTuneDsaDataset, THROMBUS_NO, THROMBUS_YES
+from .utils.CnnLstmModel import CnnLstmModel
+from .evaluation.ModelEvaluation import ModelEvaluation
 
 # --- Configuration (UPDATED with your paths) ---
 # 1. Data Root Path

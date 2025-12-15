@@ -97,6 +97,24 @@ class GermanFineTuneDataset(Dataset):
                 )
                 image_data_l = np.append(image_data_l, zeros, axis=2)
 
+        # Ensure frontal and lateral have the same HxW before Albumentations Compose
+        h_f, w_f, _ = image_data_f.shape
+        h_l, w_l, _ = image_data_l.shape
+        if (h_f != h_l) or (w_f != w_l):
+            max_h = max(h_f, h_l)
+            max_w = max(w_f, w_l)
+            fill_value = 193
+
+            if h_f != max_h or w_f != max_w:
+                padded_f = np.full((max_h, max_w, image_data_f.shape[2]), fill_value, dtype=np.uint8)
+                padded_f[:h_f, :w_f, :] = image_data_f
+                image_data_f = padded_f
+
+            if h_l != max_h or w_l != max_w:
+                padded_l = np.full((max_h, max_w, image_data_l.shape[2]), fill_value, dtype=np.uint8)
+                padded_l[:h_l, :w_l, :] = image_data_l
+                image_data_l = padded_l
+
         # Keypoints placeholder to satisfy DataAugmentation
         keypoint_placeholder = [(1, 1)]
 

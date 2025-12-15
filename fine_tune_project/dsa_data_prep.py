@@ -113,21 +113,46 @@ class FineTuneDsaDataset(Dataset):
         image_data_l = ImageUtils.fillBlackBorderWithRandomNoise(image_data_l, 193)
         
         # 2. Dynamic Sequence Padding (Pad the smaller sequence to match the larger)
-        z_f = image_data_f.shape[2] 
-        z_l = image_data_l.shape[2] 
-        
+        z_f = image_data_f.shape[2]
+        z_l = image_data_l.shape[2]
         if z_f != z_l:
             max_len = max(z_f, z_l)
-            fill_value = 193 
-            
+            fill_value = 193
+
             if z_f < max_len:
                 slices_to_add = max_len - z_f
-                zeros = np.full((image_data_f.shape[0], image_data_f.shape[1], slices_to_add), fill_value, dtype=np.uint8)
+                zeros = np.full(
+                    (image_data_f.shape[0], image_data_f.shape[1], slices_to_add),
+                    fill_value,
+                    dtype=np.uint8,
+                )
                 image_data_f = np.append(image_data_f, zeros, axis=2)
             elif z_l < max_len:
                 slices_to_add = max_len - z_l
-                zeros = np.full((image_data_l.shape[0], image_data_l.shape[1], slices_to_add), fill_value, dtype=np.uint8)
+                zeros = np.full(
+                    (image_data_l.shape[0], image_data_l.shape[1], slices_to_add),
+                    fill_value,
+                    dtype=np.uint8,
+                )
                 image_data_l = np.append(image_data_l, zeros, axis=2)
+
+        # 2b. Ensure frontal and lateral have the same HxW before Albumentations Compose
+        h_f, w_f, _ = image_data_f.shape
+        h_l, w_l, _ = image_data_l.shape
+        if (h_f != h_l) or (w_f != w_l):
+            max_h = max(h_f, h_l)
+            max_w = max(w_f, w_l)
+            fill_value = 193
+
+            if h_f != max_h or w_f != max_w:
+                padded_f = np.full((max_h, max_w, image_data_f.shape[2]), fill_value, dtype=np.uint8)
+                padded_f[:h_f, :w_f, :] = image_data_f
+                image_data_f = padded_f
+
+            if h_l != max_h or w_l != max_w:
+                padded_l = np.full((max_h, max_w, image_data_l.shape[2]), fill_value, dtype=np.uint8)
+                padded_l[:h_l, :w_l, :] = image_data_l
+                image_data_l = padded_l
         
         # 3. Create data dictionary for DataAugmentation
         data = {

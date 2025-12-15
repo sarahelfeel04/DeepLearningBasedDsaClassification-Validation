@@ -1,0 +1,215 @@
+(base) nami@nami-MS-7B17:/media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation$ python -m fine_tune_project.fine_tune_mix_kfold
+1. Splitting CHINESE data sequences (70/15/15) with stratification...
+2. Loading GERMAN annotations and building sequences...
+[GermanData] Loaded 287 sequences from annotations.
+3. Splitting GERMAN data sequences (70/15/15) by patient...
+[GermanData] Patients -> train: 125, val: 26, test: 27
+[GermanData] Sequences -> train: 205, val: 39, test: 43
+4. K-fold setup (Mixed China + German):
+   China train+val sequences: 212, test: 37
+   German train+val sequences: 244, test: 43
+   K folds: 5
+
+========== Fold 1/5 ==========
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/frontal/final_model.pt
+Unfreezing ALL layers for full fine-tuning on device cuda:0...
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/lateral/final_model.pt
+Unfreezing ALL layers for full fine-tuning on device cuda:1...
+/media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tune_project/fine_tune_mix_kfold.py:140: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler_frontal = amp.GradScaler()
+/media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tune_project/fine_tune_mix_kfold.py:141: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler_lateral = amp.GradScaler()
+Fold 1 Epoch 1/20 Training:   0%|                                                                                                                                                           | 0/364 [00:00<?, ?batch/s]/home/nami/anaconda3/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+
+Fold 1 Epoch 1/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 364/364 [02:26<00:00,  2.48batch/s, LR=5e-6, Loss_F=0.6977, Loss_L=0.6770]
+
+[Fold 1] --- Epoch 1/20 ---
+Train Loss (Mixed): Frontal=0.6977, Lateral=0.6770
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:34<00:00,  2.69batch/s, Loss_F=0.5698, Loss_L=0.7885]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6883, Lateral=0.6723
+acc_front = 0.6413043478260869 ; prec_front = 0.6833333333333333 ; recall_front = 0.7454545454545455; mcc_front = 0.23878617426232412
+acc_lat = 0.7065217391304348 ; prec_lat = 0.7916666666666666 ; recall_lat = 0.6909090909090909; mcc_lat = 0.4128997319786087
+[Fold 1] New best frontal MCC: 0.2388. Saving model.
+[Fold 1] New best lateral MCC: 0.4129. Saving model.
+Fold 1 Epoch 2/20 Training:   0%|                                                                                                                                                           | 0/364 [00:00<?, ?batch/s]/home/nami/anaconda3/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+
+Fold 1 Epoch 2/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 364/364 [02:32<00:00,  2.39batch/s, LR=5e-6, Loss_F=0.6700, Loss_L=0.6301]
+
+[Fold 1] --- Epoch 2/20 ---
+Train Loss (Mixed): Frontal=0.6700, Lateral=0.6301
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:32<00:00,  2.83batch/s, Loss_F=0.7098, Loss_L=0.5491]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6883, Lateral=0.6638
+acc_front = 0.5978260869565217 ; prec_front = 0.640625 ; recall_front = 0.7454545454545455; mcc_front = 0.13196213439470017
+acc_lat = 0.7065217391304348 ; prec_lat = 0.7692307692307693 ; recall_lat = 0.7272727272727273; mcc_lat = 0.39856575223500934
+Fold 1 Epoch 3/20 Training:   0%|                                                                                                                                                           | 0/364 [00:00<?, ?batch/s]/home/nami/anaconda3/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+Fold 1 Epoch 3/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 364/364 [02:28<00:00,  2.45batch/s, LR=5e-6, Loss_F=0.6708, Loss_L=0.6227]
+
+[Fold 1] --- Epoch 3/20 ---
+Train Loss (Mixed): Frontal=0.6708, Lateral=0.6227
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:36<00:00,  2.51batch/s, Loss_F=0.5700, Loss_L=0.5928]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6760, Lateral=0.6677
+acc_front = 0.6413043478260869 ; prec_front = 0.671875 ; recall_front = 0.7818181818181819; mcc_front = 0.22831543887337016
+acc_lat = 0.717391304347826 ; prec_lat = 0.8222222222222222 ; recall_lat = 0.6727272727272727; mcc_lat = 0.44779405278654955
+[Fold 1] New best lateral MCC: 0.4478. Saving model.
+Fold 1 Epoch 4/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 364/364 [02:38<00:00,  2.30batch/s, LR=5e-6, Loss_F=0.6636, Loss_L=0.6164]
+
+[Fold 1] --- Epoch 4/20 ---
+Train Loss (Mixed): Frontal=0.6636, Lateral=0.6164
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:37<00:00,  2.47batch/s, Loss_F=0.5544, Loss_L=0.5901]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6681, Lateral=0.6567
+acc_front = 0.6521739130434783 ; prec_front = 0.6619718309859155 ; recall_front = 0.8545454545454545; mcc_front = 0.24054315030110876
+acc_lat = 0.7391304347826086 ; prec_lat = 0.7924528301886793 ; recall_lat = 0.7636363636363637; mcc_lat = 0.4627152012864759
+[Fold 1] New best frontal MCC: 0.2405. Saving model.
+[Fold 1] New best lateral MCC: 0.4627. Saving model.
+Fold 1 Epoch 5/20 Training:   0%|                                                                                                                                                           | 0/364 [00:00<?, ?batch/s]/home/nami/anaconda3/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+
+Fold 1 Epoch 5/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 364/364 [02:36<00:00,  2.33batch/s, LR=5e-6, Loss_F=0.6576, Loss_L=0.6125]
+
+[Fold 1] --- Epoch 5/20 ---
+Train Loss (Mixed): Frontal=0.6576, Lateral=0.6125
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:35<00:00,  2.61batch/s, Loss_F=0.6500, Loss_L=0.6950]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6660, Lateral=0.6502
+acc_front = 0.6847826086956522 ; prec_front = 0.7166666666666667 ; recall_front = 0.7818181818181819; mcc_front = 0.3318723099917047
+acc_lat = 0.717391304347826 ; prec_lat = 0.8717948717948718 ; recall_lat = 0.6181818181818182; mcc_lat = 0.4792929851049587
+[Fold 1] New best frontal MCC: 0.3319. Saving model.
+[Fold 1] New best lateral MCC: 0.4793. Saving model.
+Fold 1 Epoch 6/20 Training:   0%|                                                                                                                                                           | 0/364 [00:00<?, ?batch/s]/home/nami/anaconda3/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+
+Fold 1 Epoch 6/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 364/364 [02:35<00:00,  2.34batch/s, LR=5e-6, Loss_F=0.6605, Loss_L=0.6034]
+
+[Fold 1] --- Epoch 6/20 ---
+Train Loss (Mixed): Frontal=0.6605, Lateral=0.6034
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:37<00:00,  2.48batch/s, Loss_F=0.5733, Loss_L=0.6450]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6830, Lateral=0.6696
+acc_front = 0.6304347826086957 ; prec_front = 0.6721311475409836 ; recall_front = 0.7454545454545455; mcc_front = 0.21257299122707934
+acc_lat = 0.6956521739130435 ; prec_lat = 0.813953488372093 ; recall_lat = 0.6363636363636364; mcc_lat = 0.4129064244380483
+Fold 1 Epoch 7/20 Training:   0%|                                                                                                                                                           | 0/364 [00:00<?, ?batch/s]/home/nami/anaconda3/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+
+Fold 1 Epoch 7/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 364/364 [02:35<00:00,  2.34batch/s, LR=5e-6, Loss_F=0.6470, Loss_L=0.6088]
+
+[Fold 1] --- Epoch 7/20 ---
+Train Loss (Mixed): Frontal=0.6470, Lateral=0.6088
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:35<00:00,  2.57batch/s, Loss_F=0.5639, Loss_L=0.7834]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6760, Lateral=0.6513
+acc_front = 0.6413043478260869 ; prec_front = 0.6774193548387096 ; recall_front = 0.7636363636363637; mcc_front = 0.23335503395883
+acc_lat = 0.7282608695652174 ; prec_lat = 0.8260869565217391 ; recall_lat = 0.6909090909090909; mcc_lat = 0.4655186534475463
+Fold 1 Epoch 8/20 Training:   0%|                                                                                                                                                           | 0/364 [00:00<?, ?batch/s]/home/nami/anaconda3/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+
+
+[Fold 1] --- Epoch 8/20 ---
+Train Loss (Mixed): Frontal=0.6364, Lateral=0.5946
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:36<00:00,  2.49batch/s, Loss_F=0.6952, Loss_L=0.5480]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6755, Lateral=0.6417
+acc_front = 0.6413043478260869 ; prec_front = 0.6896551724137931 ; recall_front = 0.7272727272727273; mcc_front = 0.24460223328502398
+acc_lat = 0.7717391304347826 ; prec_lat = 0.8541666666666666 ; recall_lat = 0.7454545454545455; mcc_lat = 0.5460309539717114
+[Fold 1] New best lateral MCC: 0.5460. Saving model.
+
+
+[Fold 1] --- Epoch 9/20 ---
+Train Loss (Mixed): Frontal=0.6367, Lateral=0.5823
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:36<00:00,  2.54batch/s, Loss_F=0.5625, Loss_L=0.5362]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6693, Lateral=0.6473
+acc_front = 0.6956521739130435 ; prec_front = 0.7014925373134329 ; recall_front = 0.8545454545454545; mcc_front = 0.3461076875375942
+acc_lat = 0.7282608695652174 ; prec_lat = 0.8260869565217391 ; recall_lat = 0.6909090909090909; mcc_lat = 0.4655186534475463
+[Fold 1] New best frontal MCC: 0.3461. Saving model.
+Fold 1 Epoch 10/20 Training:   0%| 
+
+
+[Fold 1] --- Epoch 10/20 ---
+Train Loss (Mixed): Frontal=0.6467, Lateral=0.5806
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:36<00:00,  2.53batch/s, Loss_F=0.5559, Loss_L=0.6683]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6614, Lateral=0.6454
+acc_front = 0.7065217391304348 ; prec_front = 0.71875 ; recall_front = 0.8363636363636363; mcc_front = 0.37284539559137514
+acc_lat = 0.75 ; prec_lat = 0.8636363636363636 ; recall_lat = 0.6909090909090909; mcc_lat = 0.5190188219731109
+[Fold 1] New best frontal MCC: 0.3728. Saving model.
+Fold 1 Epoch 11/20 Training:   0%|     
+
+
+[Fold 1] --- Epoch 11/20 ---
+Train Loss (Mixed): Frontal=0.6405, Lateral=0.5761
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:34<00:00,  2.65batch/s, Loss_F=0.5686, Loss_L=0.8100]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6817, Lateral=0.6599
+acc_front = 0.6304347826086957 ; prec_front = 0.6909090909090909 ; recall_front = 0.6909090909090909; mcc_front = 0.23144963144963146
+acc_lat = 0.6956521739130435 ; prec_lat = 0.8648648648648649 ; recall_lat = 0.5818181818181818; mcc_lat = 0.4466830466830467
+Fold 1 Epoch 12/20 Training:   0%|  
+
+
+[Fold 1] --- Epoch 12/20 ---
+Train Loss (Mixed): Frontal=0.6362, Lateral=0.5799
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:38<00:00,  2.37batch/s, Loss_F=0.5717, Loss_L=0.6094]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6696, Lateral=0.6467
+acc_front = 0.6847826086956522 ; prec_front = 0.696969696969697 ; recall_front = 0.8363636363636363; mcc_front = 0.3221481507818388
+acc_lat = 0.75 ; prec_lat = 0.8478260869565217 ; recall_lat = 0.7090909090909091; mcc_lat = 0.5098537632996936
+Fold 1 Epoch 13/20 Training:   0%|   
+
+
+[Fold 1] --- Epoch 13/20 ---
+Train Loss (Mixed): Frontal=0.6242, Lateral=0.5758
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:37<00:00,  2.44batch/s, Loss_F=0.5626, Loss_L=0.5237]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6684, Lateral=0.6578
+acc_front = 0.6630434782608695 ; prec_front = 0.7 ; recall_front = 0.7636363636363637; mcc_front = 0.2853292421270144
+acc_lat = 0.717391304347826 ; prec_lat = 0.8372093023255814 ; recall_lat = 0.6545454545454545; mcc_lat = 0.45733612157056347
+Fold 1 Epoch 14/20 Training:   0%|   
+
+
+[Fold 1] --- Epoch 14/20 ---
+Train Loss (Mixed): Frontal=0.6204, Lateral=0.5723
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:37<00:00,  2.46batch/s, Loss_F=0.6144, Loss_L=0.6117]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6514, Lateral=0.6545
+acc_front = 0.6739130434782609 ; prec_front = 0.7049180327868853 ; recall_front = 0.7818181818181819; mcc_front = 0.3063701863968218
+acc_lat = 0.7608695652173914 ; prec_lat = 0.8666666666666667 ; recall_lat = 0.7090909090909091; mcc_lat = 0.5364852322405055
+Fold 1 Epoch 15/20 Training:   0%|  
+
+
+[Fold 1] --- Epoch 15/20 ---
+Train Loss (Mixed): Frontal=0.6192, Lateral=0.5632
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:40<00:00,  2.26batch/s, Loss_F=0.5380, Loss_L=0.6044]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6836, Lateral=0.6650
+acc_front = 0.5978260869565217 ; prec_front = 0.640625 ; recall_front = 0.7454545454545455; mcc_front = 0.13196213439470017
+acc_lat = 0.7282608695652174 ; prec_lat = 0.7777777777777778 ; recall_lat = 0.7636363636363637; mcc_lat = 0.4374884922713569
+Fold 1 Epoch 16/20 Training:   0%| 
+
+
+[Fold 1] --- Epoch 16/20 ---
+Train Loss (Mixed): Frontal=0.6310, Lateral=0.5629
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:38<00:00,  2.38batch/s, Loss_F=0.6590, Loss_L=0.6228]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6485, Lateral=0.6333
+acc_front = 0.75 ; prec_front = 0.8333333333333334 ; recall_front = 0.7272727272727273; mcc_front = 0.5016538799740106
+acc_lat = 0.782608695652174 ; prec_lat = 0.8888888888888888 ; recall_lat = 0.7272727272727273; mcc_lat = 0.5808308219674835
+[Fold 1] New best frontal MCC: 0.5017. Saving model.
+[Fold 1] New best lateral MCC: 0.5808. Saving model.
+
+
+[Fold 1] --- Epoch 17/20 ---
+Train Loss (Mixed): Frontal=0.6216, Lateral=0.5558
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:36<00:00,  2.50batch/s, Loss_F=0.7693, Loss_L=0.6987]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6822, Lateral=0.6787
+acc_front = 0.5978260869565217 ; prec_front = 0.6607142857142857 ; recall_front = 0.6727272727272727; mcc_front = 0.15996226301201663
+acc_lat = 0.7065217391304348 ; prec_lat = 0.8333333333333334 ; recall_lat = 0.6363636363636364; mcc_lat = 0.4401994931569024
+Fold 1 Epoch 18/20 Training:   0%|   
+
+
+[Fold 1] --- Epoch 18/20 ---
+Train Loss (Mixed): Frontal=0.6079, Lateral=0.5556
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:35<00:00,  2.56batch/s, Loss_F=0.5333, Loss_L=0.6276]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6620, Lateral=0.6487
+acc_front = 0.6847826086956522 ; prec_front = 0.7407407407407407 ; recall_front = 0.7272727272727273; mcc_front = 0.3474461180231134
+acc_lat = 0.782608695652174 ; prec_lat = 0.7966101694915254 ; recall_lat = 0.8545454545454545; mcc_lat = 0.5420711102819072
+Fold 1 Epoch 19/20 Training:   0%|   
+
+[Fold 1] --- Epoch 19/20 ---
+Train Loss (Mixed): Frontal=0.5998, Lateral=0.5578
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:36<00:00,  2.51batch/s, Loss_F=0.5374, Loss_L=0.5259]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6590, Lateral=0.6773
+acc_front = 0.7065217391304348 ; prec_front = 0.7 ; recall_front = 0.8909090909090909; mcc_front = 0.37169209638980877
+acc_lat = 0.6956521739130435 ; prec_lat = 0.7142857142857143 ; recall_lat = 0.8181818181818182; mcc_lat = 0.3500679024712774
+
+
+[Fold 1] --- Epoch 20/20 ---
+Train Loss (Mixed): Frontal=0.6025, Lateral=0.5638
+Fold 1 Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:38<00:00,  2.42batch/s, Loss_F=0.5434, Loss_L=0.6920]
+[Fold 1] Validation Loss (Mixed): Frontal=0.6720, Lateral=0.6522
+acc_front = 0.6847826086956522 ; prec_front = 0.7407407407407407 ; recall_front = 0.7272727272727273; mcc_front = 0.3474461180231134
+acc_lat = 0.7934782608695652 ; prec_lat = 0.8333333333333334 ; recall_lat = 0.8181818181818182; mcc_lat = 0.5725520536437221
+
+[Fold 1] Finished. Best MCC: Frontal=0.5017, Lateral=0.5808

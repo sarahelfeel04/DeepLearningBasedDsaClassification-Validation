@@ -10,6 +10,8 @@ K-fold loop over the train+val IDs.
 """
 
 import os
+import csv
+import warnings
 
 import torch
 import torch.nn as nn
@@ -33,7 +35,7 @@ from .GermanDataUtils import (
 # -------------------------------------------------------------------------
 
 # 1. Chinese Data Root Path
-DATA_ROOT_PATH_CHINA = "/media/nami/FastDataSpace/ThromboMap-Validation/datasets/Channel0-DataTypeUnsignedShort-Values0to4000"
+DATA_ROOT_PATH_CHINA = "/media/nami/Volume/ThromboMap/datasets/FirstChannel-CorrectRange-uint16-reannotated"
 
 # 2. German Data Root Path
 DATA_ROOT_PATH_GERMAN = "/media/nami/FastDataSpace/ThromboMap-Validation/dataClinic2024"
@@ -52,7 +54,7 @@ OUTPUT_PATH = "./fine_tuned_models/china_german_mixed_kfold/"
 
 # Hyperparameters
 FINE_TUNE_LR = 5e-6     # Low Learning Rate for Fine-Tuning (recommended when unfreezing CNN)
-EPOCHS = 50
+EPOCHS = 20
 BATCH_SIZE = 1
 NUM_WORKERS = 4
 TRAIN_RATIO = 0.7
@@ -63,6 +65,9 @@ LABEL_THRESHOLD = (THROMBUS_NO + THROMBUS_YES) / 2  # Midpoint between the two l
 
 # K-fold settings
 N_FOLDS = 5
+# If you already completed some folds, you can skip them by setting this.
+# 0-based index: e.g. set to 1 to start from Fold 2/5.
+FOLD_START = 1
 
 # --- Device Setup ---
 device1 = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -70,6 +75,24 @@ device2 = torch.device("cuda:1" if torch.cuda.is_available() and torch.cuda.devi
 if device2.type == "cpu":
     print("Warning: Only one GPU or none detected. Both models will use device:", device1)
     device2 = device1
+
+# -------------------------------------------------------------------------
+# Warning filtering / deprecation clean-up
+# -------------------------------------------------------------------------
+
+# Suppress Albumentations API warnings about ShiftScaleRotate/Downscale
+warnings.filterwarnings(
+    "ignore",
+    message="ShiftScaleRotate is a special case of Affine transform.*",
+)
+warnings.filterwarnings(
+    "ignore",
+    message="Argument\\(s\\) 'value' are not valid for transform ShiftScaleRotate",
+)
+warnings.filterwarnings(
+    "ignore",
+    message="Argument\\(s\\) 'scale_min, scale_max' are not valid for transform Downscale",
+)
 
 
 def load_and_configure_model(device, checkpoint_name: str) -> CnnLstmModel:
@@ -137,8 +160,9 @@ def run_fold(
 
     loss_function_validation = nn.BCEWithLogitsLoss()
 
-    scaler_frontal = amp.GradScaler()
-    scaler_lateral = amp.GradScaler()
+    # Use new torch.amp.GradScaler API to avoid deprecation warnings
+    scaler_frontal = torch.amp.GradScaler("cuda") if torch.cuda.is_available() else torch.amp.GradScaler()
+    scaler_lateral = torch.amp.GradScaler("cuda") if torch.cuda.is_available() else torch.amp.GradScaler()
 
     modelEvaluationVal = ModelEvaluation()
     best_mcc_frontal = -1.0
@@ -263,10 +287,22 @@ def run_fold(
             f"[Fold {fold_idx + 1}] Validation Loss (Mixed): "
             f"Frontal={avg_val_loss_frontal:.4f}, Lateral={avg_val_loss_lateral:.4f}"
         )
+
+        # Compute metrics for logging
+        acc_front = modelEvaluationVal.getAccuracyFrontal()
+        prec_front = modelEvaluationVal.getPrecisionFrontal()
+        rec_front = modelEvaluationVal.getRecallFrontal()
+        mcc_front = modelEvaluationVal.getMccFrontal()
+
+        acc_lat = modelEvaluationVal.getAccuracyLateral()
+        prec_lat = modelEvaluationVal.getPrecisionLateral()
+        rec_lat = modelEvaluationVal.getRecallLateral()
+        mcc_lat = modelEvaluationVal.getMccLateral()
+
         modelEvaluationVal.printAllStats()
 
         # Save best models per fold based on MCC
-        current_mcc_frontal = modelEvaluationVal.getMccFrontal()
+        current_mcc_frontal = mcc_front
         if current_mcc_frontal > best_mcc_frontal:
             best_mcc_frontal = current_mcc_frontal
             print(f"[Fold {fold_idx + 1}] New best frontal MCC: {best_mcc_frontal:.4f}. Saving model.")
@@ -280,7 +316,7 @@ def run_fold(
                 os.path.join(OUTPUT_PATH, f"frontal_fine_tuned_best_mcc_fold_{fold_idx + 1}.pt"),
             )
 
-        current_mcc_lateral = modelEvaluationVal.getMccLateral()
+        current_mcc_lateral = mcc_lat
         if current_mcc_lateral > best_mcc_lateral:
             best_mcc_lateral = current_mcc_lateral
             print(f"[Fold {fold_idx + 1}] New best lateral MCC: {best_mcc_lateral:.4f}. Saving model.")
@@ -292,6 +328,49 @@ def run_fold(
                     "mcc": best_mcc_lateral,
                 },
                 os.path.join(OUTPUT_PATH, f"lateral_fine_tuned_best_mcc_fold_{fold_idx + 1}.pt"),
+            )
+
+        # Log metrics to CSV for this fold/epoch
+        metrics_file = os.path.join(OUTPUT_PATH, f"metrics_fold_{fold_idx + 1}.csv")
+        file_exists = os.path.isfile(metrics_file)
+        with open(metrics_file, "a", newline="") as f:
+            writer = csv.writer(f)
+            if not file_exists:
+                writer.writerow(
+                    [
+                        "fold",
+                        "epoch",
+                        "train_loss_frontal",
+                        "train_loss_lateral",
+                        "val_loss_frontal",
+                        "val_loss_lateral",
+                        "acc_front",
+                        "prec_front",
+                        "recall_front",
+                        "mcc_front",
+                        "acc_lat",
+                        "prec_lat",
+                        "recall_lat",
+                        "mcc_lat",
+                    ]
+                )
+            writer.writerow(
+                [
+                    fold_idx + 1,
+                    epoch + 1,
+                    avg_train_loss_frontal,
+                    avg_train_loss_lateral,
+                    avg_val_loss_frontal,
+                    avg_val_loss_lateral,
+                    acc_front,
+                    prec_front,
+                    rec_front,
+                    mcc_front,
+                    acc_lat,
+                    prec_lat,
+                    rec_lat,
+                    mcc_lat,
+                ]
             )
 
     print(
@@ -340,6 +419,9 @@ if __name__ == "__main__":
     for fold_idx, ((train_idx_ch, val_idx_ch), (train_idx_de, val_idx_de)) in enumerate(
         zip(kf_ch.split(trainval_ch), kf_de.split(trainval_de))
     ):
+        # Optionally skip some folds if they were completed in a previous run
+        if fold_idx < FOLD_START:
+            continue
         train_ids_ch_fold = [trainval_ch[i] for i in train_idx_ch]
         val_ids_ch_fold = [trainval_ch[i] for i in val_idx_ch]
 

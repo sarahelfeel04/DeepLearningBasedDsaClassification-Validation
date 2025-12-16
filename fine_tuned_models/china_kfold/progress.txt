@@ -1,0 +1,397 @@
+python -m fine_tune_project.fine_tune_dsa_kfold
+Splitting data sequences (70/15/15) with stratification...
+
+========== Fold 1/5 ==========
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/frontal/final_model.pt
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/lateral/final_model.pt
+
+Starting Fine-Tuning for this fold...
+Training: 100%|██████████████| 169/169 [03:40<00:00,  1.30s/batch, LR=5e-6, Loss_F=0.7781, Loss_L=0.7076]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.13batch/s, Loss_F=0.5559, Loss_L=0.6315]
+[Fold 1] Epoch 1/20 | Train Loss: Frontal=0.7781, Lateral=0.7076 | Val Loss: Frontal=0.6819, Lateral=0.7019 | ACC_F=0.6047, PREC_F=0.5714, REC_F=0.9091, MCC_F=0.2502 | ACC_L=0.6512, PREC_L=0.6842, REC_L=0.5909, MCC_L=0.3072
+[Fold 1] New best frontal MCC: 0.2502. Saving model.
+[Fold 1] New best lateral MCC: 0.3072. Saving model.
+Training: 100%|██████████████| 169/169 [00:55<00:00,  3.02batch/s, LR=5e-6, Loss_F=0.6975, Loss_L=0.6428]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.32batch/s, Loss_F=0.5870, Loss_L=0.5939]
+[Fold 1] Epoch 2/20 | Train Loss: Frontal=0.6975, Lateral=0.6428 | Val Loss: Frontal=0.6867, Lateral=0.6541 | ACC_F=0.6279, PREC_F=0.6154, REC_F=0.7273, MCC_F=0.2567 | ACC_L=0.7209, PREC_L=0.7083, REC_L=0.7727, MCC_L=0.4423
+[Fold 1] New best frontal MCC: 0.2567. Saving model.
+[Fold 1] New best lateral MCC: 0.4423. Saving model.
+Training: 100%|██████████████| 169/169 [00:56<00:00,  2.99batch/s, LR=5e-6, Loss_F=0.6832, Loss_L=0.6294]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.33batch/s, Loss_F=0.6053, Loss_L=0.6325]
+[Fold 1] Epoch 3/20 | Train Loss: Frontal=0.6832, Lateral=0.6294 | Val Loss: Frontal=0.6967, Lateral=0.6636 | ACC_F=0.5581, PREC_F=0.6667, REC_F=0.2727, MCC_F=0.1596 | ACC_L=0.6977, PREC_L=0.7143, REC_L=0.6818, MCC_L=0.3961
+Training: 100%|██████████████| 169/169 [00:56<00:00,  2.98batch/s, LR=5e-6, Loss_F=0.6794, Loss_L=0.6162]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.31batch/s, Loss_F=0.6085, Loss_L=0.7107]
+[Fold 1] Epoch 4/20 | Train Loss: Frontal=0.6794, Lateral=0.6162 | Val Loss: Frontal=0.6952, Lateral=0.6770 | ACC_F=0.6047, PREC_F=0.6667, REC_F=0.4545, MCC_F=0.2270 | ACC_L=0.6279, PREC_L=0.6071, REC_L=0.7727, MCC_L=0.2611
+Training: 100%|██████████████| 169/169 [00:58<00:00,  2.87batch/s, LR=5e-6, Loss_F=0.6891, Loss_L=0.6179]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.26batch/s, Loss_F=0.6101, Loss_L=0.6522]
+[Fold 1] Epoch 5/20 | Train Loss: Frontal=0.6891, Lateral=0.6179 | Val Loss: Frontal=0.6831, Lateral=0.6597 | ACC_F=0.6512, PREC_F=0.8182, REC_F=0.4091, MCC_F=0.3596 | ACC_L=0.7442, PREC_L=0.9231, REC_L=0.5455, MCC_L=0.5418
+[Fold 1] New best frontal MCC: 0.3596. Saving model.
+[Fold 1] New best lateral MCC: 0.5418. Saving model.
+Training: 100%|██████████████| 169/169 [00:54<00:00,  3.13batch/s, LR=5e-6, Loss_F=0.6795, Loss_L=0.6077]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.30batch/s, Loss_F=0.6106, Loss_L=0.6092]
+[Fold 1] Epoch 6/20 | Train Loss: Frontal=0.6795, Lateral=0.6077 | Val Loss: Frontal=0.6740, Lateral=0.6018 | ACC_F=0.6047, PREC_F=0.7273, REC_F=0.3636, MCC_F=0.2529 | ACC_L=0.8372, PREC_L=0.8947, REC_L=0.7727, MCC_L=0.6819
+[Fold 1] New best lateral MCC: 0.6819. Saving model.
+Training: 100%|██████████████| 169/169 [00:54<00:00,  3.13batch/s, LR=5e-6, Loss_F=0.6660, Loss_L=0.5957]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.26batch/s, Loss_F=0.6253, Loss_L=0.6183]
+[Fold 1] Epoch 7/20 | Train Loss: Frontal=0.6660, Lateral=0.5957 | Val Loss: Frontal=0.6843, Lateral=0.6438 | ACC_F=0.5814, PREC_F=0.7000, REC_F=0.3182, MCC_F=0.2074 | ACC_L=0.7209, PREC_L=0.9167, REC_L=0.5000, MCC_L=0.5041
+Training: 100%|██████████████| 169/169 [00:54<00:00,  3.07batch/s, LR=5e-6, Loss_F=0.6714, Loss_L=0.5878]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.28batch/s, Loss_F=0.6028, Loss_L=0.6384]
+[Fold 1] Epoch 8/20 | Train Loss: Frontal=0.6714, Lateral=0.5878 | Val Loss: Frontal=0.6876, Lateral=0.6105 | ACC_F=0.5116, PREC_F=0.5556, REC_F=0.2273, MCC_F=0.0452 | ACC_L=0.8372, PREC_L=0.8947, REC_L=0.7727, MCC_L=0.6819
+Training: 100%|██████████████| 169/169 [00:54<00:00,  3.07batch/s, LR=5e-6, Loss_F=0.6628, Loss_L=0.5870]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.28batch/s, Loss_F=0.6086, Loss_L=0.5984]
+[Fold 1] Epoch 9/20 | Train Loss: Frontal=0.6628, Lateral=0.5870 | Val Loss: Frontal=0.6893, Lateral=0.6109 | ACC_F=0.5581, PREC_F=0.6667, REC_F=0.2727, MCC_F=0.1596 | ACC_L=0.8372, PREC_L=0.9412, REC_L=0.7273, MCC_L=0.6949
+[Fold 1] New best lateral MCC: 0.6949. Saving model.
+Training: 100%|██████████████| 169/169 [00:56<00:00,  2.98batch/s, LR=5e-6, Loss_F=0.6686, Loss_L=0.5881]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.28batch/s, Loss_F=0.6094, Loss_L=0.6468]
+[Fold 1] Epoch 10/20 | Train Loss: Frontal=0.6686, Lateral=0.5881 | Val Loss: Frontal=0.6778, Lateral=0.6286 | ACC_F=0.6047, PREC_F=0.7273, REC_F=0.3636, MCC_F=0.2529 | ACC_L=0.7674, PREC_L=0.9286, REC_L=0.5909, MCC_L=0.5795
+Training: 100%|██████████████| 169/169 [00:56<00:00,  2.98batch/s, LR=5e-6, Loss_F=0.6595, Loss_L=0.5774]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.27batch/s, Loss_F=0.6002, Loss_L=0.6038]
+[Fold 1] Epoch 11/20 | Train Loss: Frontal=0.6595, Lateral=0.5774 | Val Loss: Frontal=0.6745, Lateral=0.6129 | ACC_F=0.5814, PREC_F=0.6667, REC_F=0.3636, MCC_F=0.1930 | ACC_L=0.7907, PREC_L=0.9333, REC_L=0.6364, MCC_L=0.6175
+Training: 100%|██████████████| 169/169 [00:51<00:00,  3.28batch/s, LR=5e-6, Loss_F=0.6595, Loss_L=0.5715]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.30batch/s, Loss_F=0.6054, Loss_L=0.5982]
+[Fold 1] Epoch 12/20 | Train Loss: Frontal=0.6595, Lateral=0.5715 | Val Loss: Frontal=0.6871, Lateral=0.6122 | ACC_F=0.5349, PREC_F=0.6250, REC_F=0.2273, MCC_F=0.1084 | ACC_L=0.7907, PREC_L=1.0000, REC_L=0.5909, MCC_L=0.6431
+Training: 100%|██████████████| 169/169 [00:54<00:00,  3.08batch/s, LR=5e-6, Loss_F=0.6576, Loss_L=0.5860]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.28batch/s, Loss_F=0.6045, Loss_L=0.6157]
+[Fold 1] Epoch 13/20 | Train Loss: Frontal=0.6576, Lateral=0.5860 | Val Loss: Frontal=0.6720, Lateral=0.6333 | ACC_F=0.6279, PREC_F=0.7500, REC_F=0.4091, MCC_F=0.2967 | ACC_L=0.7907, PREC_L=0.9333, REC_L=0.6364, MCC_L=0.6175
+Training: 100%|██████████████| 169/169 [00:52<00:00,  3.19batch/s, LR=5e-6, Loss_F=0.6530, Loss_L=0.5707]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.24batch/s, Loss_F=0.5961, Loss_L=0.5657]
+[Fold 1] Epoch 14/20 | Train Loss: Frontal=0.6530, Lateral=0.5707 | Val Loss: Frontal=0.6737, Lateral=0.5765 | ACC_F=0.6047, PREC_F=0.6923, REC_F=0.4091, MCC_F=0.2379 | ACC_L=0.9070, PREC_L=0.9500, REC_L=0.8636, MCC_L=0.8178
+[Fold 1] New best lateral MCC: 0.8178. Saving model.
+Training: 100%|██████████████| 169/169 [00:54<00:00,  3.13batch/s, LR=5e-6, Loss_F=0.6449, Loss_L=0.5825]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.26batch/s, Loss_F=0.5963, Loss_L=0.6102]
+[Fold 1] Epoch 15/20 | Train Loss: Frontal=0.6449, Lateral=0.5825 | Val Loss: Frontal=0.6697, Lateral=0.5985 | ACC_F=0.6047, PREC_F=0.6923, REC_F=0.4091, MCC_F=0.2379 | ACC_L=0.8372, PREC_L=0.9412, REC_L=0.7273, MCC_L=0.6949
+Training: 100%|██████████████| 169/169 [00:57<00:00,  2.91batch/s, LR=5e-6, Loss_F=0.6427, Loss_L=0.5626]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.29batch/s, Loss_F=0.5905, Loss_L=0.6630]
+[Fold 1] Epoch 16/20 | Train Loss: Frontal=0.6427, Lateral=0.5626 | Val Loss: Frontal=0.6681, Lateral=0.6397 | ACC_F=0.6744, PREC_F=0.7500, REC_F=0.5455, MCC_F=0.3671 | ACC_L=0.7674, PREC_L=1.0000, REC_L=0.5455, MCC_L=0.6079
+[Fold 1] New best frontal MCC: 0.3671. Saving model.
+Training: 100%|██████████████| 169/169 [00:58<00:00,  2.91batch/s, LR=5e-6, Loss_F=0.6438, Loss_L=0.5537]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.28batch/s, Loss_F=0.5958, Loss_L=0.5693]
+[Fold 1] Epoch 17/20 | Train Loss: Frontal=0.6438, Lateral=0.5537 | Val Loss: Frontal=0.6699, Lateral=0.6312 | ACC_F=0.6744, PREC_F=0.7500, REC_F=0.5455, MCC_F=0.3671 | ACC_L=0.7674, PREC_L=0.8750, REC_L=0.6364, MCC_L=0.5596
+Training: 100%|██████████████| 169/169 [00:57<00:00,  2.96batch/s, LR=5e-6, Loss_F=0.6341, Loss_L=0.5636]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.28batch/s, Loss_F=0.5849, Loss_L=0.5916]
+[Fold 1] Epoch 18/20 | Train Loss: Frontal=0.6341, Lateral=0.5636 | Val Loss: Frontal=0.6479, Lateral=0.5951 | ACC_F=0.7209, PREC_F=0.7273, REC_F=0.7273, MCC_F=0.4416 | ACC_L=0.8605, PREC_L=1.0000, REC_L=0.7273, MCC_L=0.7521
+[Fold 1] New best frontal MCC: 0.4416. Saving model.
+Training: 100%|██████████████| 169/169 [00:55<00:00,  3.04batch/s, LR=5e-6, Loss_F=0.6304, Loss_L=0.5605]
+Validation: 100%|███████████████████████| 43/43 [00:10<00:00,  4.27batch/s, Loss_F=0.5864, Loss_L=0.5718]
+[Fold 1] Epoch 19/20 | Train Loss: Frontal=0.6304, Lateral=0.5605 | Val Loss: Frontal=0.6636, Lateral=0.6132 | ACC_F=0.6977, PREC_F=0.7368, REC_F=0.6364, MCC_F=0.4009 | ACC_L=0.8140, PREC_L=1.0000, REC_L=0.6364, MCC_L=0.6788
+Training: 100%|██████████████| 169/169 [00:55<00:00,  3.07batch/s, LR=5e-6, Loss_F=0.6471, Loss_L=0.5625]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.30batch/s, Loss_F=0.5806, Loss_L=0.5780]
+[Fold 1] Epoch 20/20 | Train Loss: Frontal=0.6471, Lateral=0.5625 | Val Loss: Frontal=0.6682, Lateral=0.6023 | ACC_F=0.6512, PREC_F=0.7059, REC_F=0.5455, MCC_F=0.3142 | ACC_L=0.8140, PREC_L=0.9375, REC_L=0.6818, MCC_L=0.6559
+
+[Fold 1] Finished. Best MCC: Frontal=0.4416, Lateral=0.8178
+
+========== Fold 2/5 ==========
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/frontal/final_model.pt
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/lateral/final_model.pt
+
+Starting Fine-Tuning for this fold...
+Training: 100%|██████████████| 169/169 [01:16<00:00,  2.20batch/s, LR=5e-6, Loss_F=0.7740, Loss_L=0.6918]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.43batch/s, Loss_F=0.5737, Loss_L=0.5329]
+[Fold 2] Epoch 1/20 | Train Loss: Frontal=0.7740, Lateral=0.6918 | Val Loss: Frontal=0.7300, Lateral=0.6560 | ACC_F=0.5349, PREC_F=0.5312, REC_F=0.7727, MCC_F=0.0670 | ACC_L=0.6977, PREC_L=0.7143, REC_L=0.6818, MCC_L=0.3961
+[Fold 2] New best frontal MCC: 0.0670. Saving model.
+[Fold 2] New best lateral MCC: 0.3961. Saving model.
+Training: 100%|██████████████| 169/169 [00:54<00:00,  3.12batch/s, LR=5e-6, Loss_F=0.6952, Loss_L=0.6321]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.35batch/s, Loss_F=0.6635, Loss_L=0.5405]
+[Fold 2] Epoch 2/20 | Train Loss: Frontal=0.6952, Lateral=0.6321 | Val Loss: Frontal=0.7153, Lateral=0.6779 | ACC_F=0.4884, PREC_F=0.5000, REC_F=0.7727, MCC_F=-0.0452 | ACC_L=0.7442, PREC_L=0.9231, REC_L=0.5455, MCC_L=0.5418
+[Fold 2] New best lateral MCC: 0.5418. Saving model.
+Training: 100%|██████████████| 169/169 [00:57<00:00,  2.96batch/s, LR=5e-6, Loss_F=0.6858, Loss_L=0.6388]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.40batch/s, Loss_F=0.7144, Loss_L=0.5444]
+[Fold 2] Epoch 3/20 | Train Loss: Frontal=0.6858, Lateral=0.6388 | Val Loss: Frontal=0.7019, Lateral=0.6758 | ACC_F=0.5581, PREC_F=0.5882, REC_F=0.4545, MCC_F=0.1239 | ACC_L=0.6977, PREC_L=0.8462, REC_L=0.5000, MCC_L=0.4405
+[Fold 2] New best frontal MCC: 0.1239. Saving model.
+Training: 100%|██████████████| 169/169 [00:54<00:00,  3.08batch/s, LR=5e-6, Loss_F=0.6891, Loss_L=0.6325]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.41batch/s, Loss_F=0.7551, Loss_L=0.5442]
+[Fold 2] Epoch 4/20 | Train Loss: Frontal=0.6891, Lateral=0.6325 | Val Loss: Frontal=0.6951, Lateral=0.6433 | ACC_F=0.6279, PREC_F=0.7500, REC_F=0.4091, MCC_F=0.2967 | ACC_L=0.7442, PREC_L=0.8235, REC_L=0.6364, MCC_L=0.5045
+[Fold 2] New best frontal MCC: 0.2967. Saving model.
+Training: 100%|██████████████| 169/169 [00:55<00:00,  3.05batch/s, LR=5e-6, Loss_F=0.6829, Loss_L=0.6165]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.42batch/s, Loss_F=0.7857, Loss_L=0.5446]
+[Fold 2] Epoch 5/20 | Train Loss: Frontal=0.6829, Lateral=0.6165 | Val Loss: Frontal=0.6930, Lateral=0.6323 | ACC_F=0.5814, PREC_F=0.7500, REC_F=0.2727, MCC_F=0.2280 | ACC_L=0.7907, PREC_L=0.8421, REC_L=0.7273, MCC_L=0.5882
+[Fold 2] New best lateral MCC: 0.5882. Saving model.
+Training: 100%|██████████████| 169/169 [00:56<00:00,  3.02batch/s, LR=5e-6, Loss_F=0.6724, Loss_L=0.6093]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.42batch/s, Loss_F=0.7533, Loss_L=0.5372]
+[Fold 2] Epoch 6/20 | Train Loss: Frontal=0.6724, Lateral=0.6093 | Val Loss: Frontal=0.6926, Lateral=0.6514 | ACC_F=0.6047, PREC_F=0.7778, REC_F=0.3182, MCC_F=0.2739 | ACC_L=0.7442, PREC_L=0.8667, REC_L=0.5909, MCC_L=0.5199
+Training: 100%|██████████████| 169/169 [00:53<00:00,  3.17batch/s, LR=5e-6, Loss_F=0.6678, Loss_L=0.6007]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.43batch/s, Loss_F=0.7507, Loss_L=0.5378]
+[Fold 2] Epoch 7/20 | Train Loss: Frontal=0.6678, Lateral=0.6007 | Val Loss: Frontal=0.6941, Lateral=0.7170 | ACC_F=0.6279, PREC_F=0.8000, REC_F=0.3636, MCC_F=0.3176 | ACC_L=0.6512, PREC_L=0.8889, REC_L=0.3636, MCC_L=0.3883
+[Fold 2] New best frontal MCC: 0.3176. Saving model.
+Training: 100%|██████████████| 169/169 [00:57<00:00,  2.95batch/s, LR=5e-6, Loss_F=0.6676, Loss_L=0.5951]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.44batch/s, Loss_F=0.7798, Loss_L=0.5296]
+[Fold 2] Epoch 8/20 | Train Loss: Frontal=0.6676, Lateral=0.5951 | Val Loss: Frontal=0.6971, Lateral=0.6521 | ACC_F=0.5581, PREC_F=0.6364, REC_F=0.3182, MCC_F=0.1463 | ACC_L=0.7442, PREC_L=0.8235, REC_L=0.6364, MCC_L=0.5045
+Training: 100%|██████████████| 169/169 [00:56<00:00,  3.02batch/s, LR=5e-6, Loss_F=0.6697, Loss_L=0.5943]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.44batch/s, Loss_F=0.7603, Loss_L=0.5270]
+[Fold 2] Epoch 9/20 | Train Loss: Frontal=0.6697, Lateral=0.5943 | Val Loss: Frontal=0.6853, Lateral=0.7142 | ACC_F=0.6512, PREC_F=0.8182, REC_F=0.4091, MCC_F=0.3596 | ACC_L=0.6279, PREC_L=0.8750, REC_L=0.3182, MCC_L=0.3475
+[Fold 2] New best frontal MCC: 0.3596. Saving model.
+Training: 100%|██████████████| 169/169 [00:57<00:00,  2.95batch/s, LR=5e-6, Loss_F=0.6621, Loss_L=0.5965]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.36batch/s, Loss_F=0.7559, Loss_L=0.5239]
+[Fold 2] Epoch 10/20 | Train Loss: Frontal=0.6621, Lateral=0.5965 | Val Loss: Frontal=0.7060, Lateral=0.6514 | ACC_F=0.5581, PREC_F=0.6667, REC_F=0.2727, MCC_F=0.1596 | ACC_L=0.7209, PREC_L=0.7500, REC_L=0.6818, MCC_L=0.4447
+Training: 100%|██████████████| 169/169 [00:59<00:00,  2.85batch/s, LR=5e-6, Loss_F=0.6591, Loss_L=0.6030]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.43batch/s, Loss_F=0.7621, Loss_L=0.5257]
+[Fold 2] Epoch 11/20 | Train Loss: Frontal=0.6591, Lateral=0.6030 | Val Loss: Frontal=0.6728, Lateral=0.6383 | ACC_F=0.6744, PREC_F=0.7500, REC_F=0.5455, MCC_F=0.3671 | ACC_L=0.8140, PREC_L=0.7917, REC_L=0.8636, MCC_L=0.6296
+[Fold 2] New best frontal MCC: 0.3671. Saving model.
+[Fold 2] New best lateral MCC: 0.6296. Saving model.
+Training: 100%|██████████████| 169/169 [00:57<00:00,  2.92batch/s, LR=5e-6, Loss_F=0.6473, Loss_L=0.5734]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.45batch/s, Loss_F=0.7400, Loss_L=0.5223]
+[Fold 2] Epoch 12/20 | Train Loss: Frontal=0.6473, Lateral=0.5734 | Val Loss: Frontal=0.6876, Lateral=0.6489 | ACC_F=0.6744, PREC_F=0.8333, REC_F=0.4545, MCC_F=0.4004 | ACC_L=0.7674, PREC_L=1.0000, REC_L=0.5455, MCC_L=0.6079
+[Fold 2] New best frontal MCC: 0.4004. Saving model.
+Training: 100%|██████████████| 169/169 [00:57<00:00,  2.95batch/s, LR=5e-6, Loss_F=0.6568, Loss_L=0.5590]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.37batch/s, Loss_F=0.7669, Loss_L=0.5203]
+[Fold 2] Epoch 13/20 | Train Loss: Frontal=0.6568, Lateral=0.5590 | Val Loss: Frontal=0.6898, Lateral=0.6200 | ACC_F=0.6279, PREC_F=0.7500, REC_F=0.4091, MCC_F=0.2967 | ACC_L=0.8140, PREC_L=0.9375, REC_L=0.6818, MCC_L=0.6559
+[Fold 2] New best lateral MCC: 0.6559. Saving model.
+Training: 100%|██████████████| 169/169 [00:55<00:00,  3.04batch/s, LR=5e-6, Loss_F=0.6525, Loss_L=0.5726]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.42batch/s, Loss_F=0.7560, Loss_L=0.5200]
+[Fold 2] Epoch 14/20 | Train Loss: Frontal=0.6525, Lateral=0.5726 | Val Loss: Frontal=0.6836, Lateral=0.6448 | ACC_F=0.6279, PREC_F=0.7500, REC_F=0.4091, MCC_F=0.2967 | ACC_L=0.7674, PREC_L=1.0000, REC_L=0.5455, MCC_L=0.6079
+Training: 100%|██████████████| 169/169 [00:58<00:00,  2.91batch/s, LR=5e-6, Loss_F=0.6434, Loss_L=0.5645]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.36batch/s, Loss_F=0.7455, Loss_L=0.5201]
+[Fold 2] Epoch 15/20 | Train Loss: Frontal=0.6434, Lateral=0.5645 | Val Loss: Frontal=0.6904, Lateral=0.6458 | ACC_F=0.6279, PREC_F=0.7143, REC_F=0.4545, MCC_F=0.2817 | ACC_L=0.7442, PREC_L=1.0000, REC_L=0.5000, MCC_L=0.5728
+Training: 100%|██████████████| 169/169 [00:59<00:00,  2.84batch/s, LR=5e-6, Loss_F=0.6469, Loss_L=0.5503]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.36batch/s, Loss_F=0.7680, Loss_L=0.5192]
+[Fold 2] Epoch 16/20 | Train Loss: Frontal=0.6469, Lateral=0.5503 | Val Loss: Frontal=0.6881, Lateral=0.6155 | ACC_F=0.6977, PREC_F=0.8000, REC_F=0.5455, MCC_F=0.4222 | ACC_L=0.8372, PREC_L=1.0000, REC_L=0.6818, MCC_L=0.7151
+[Fold 2] New best frontal MCC: 0.4222. Saving model.
+[Fold 2] New best lateral MCC: 0.7151. Saving model.
+Training: 100%|██████████████| 169/169 [00:56<00:00,  2.97batch/s, LR=5e-6, Loss_F=0.6394, Loss_L=0.5626]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.42batch/s, Loss_F=0.7656, Loss_L=0.5196]
+[Fold 2] Epoch 17/20 | Train Loss: Frontal=0.6394, Lateral=0.5626 | Val Loss: Frontal=0.6800, Lateral=0.6801 | ACC_F=0.6512, PREC_F=0.8182, REC_F=0.4091, MCC_F=0.3596 | ACC_L=0.7209, PREC_L=1.0000, REC_L=0.4545, MCC_L=0.5378
+Training: 100%|██████████████| 169/169 [00:54<00:00,  3.09batch/s, LR=5e-6, Loss_F=0.6389, Loss_L=0.5610]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.39batch/s, Loss_F=0.7324, Loss_L=0.5193]
+[Fold 2] Epoch 18/20 | Train Loss: Frontal=0.6389, Lateral=0.5610 | Val Loss: Frontal=0.6788, Lateral=0.6353 | ACC_F=0.6512, PREC_F=0.8182, REC_F=0.4091, MCC_F=0.3596 | ACC_L=0.8140, PREC_L=1.0000, REC_L=0.6364, MCC_L=0.6788
+Training: 100%|██████████████| 169/169 [00:56<00:00,  3.00batch/s, LR=5e-6, Loss_F=0.6379, Loss_L=0.5579]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.41batch/s, Loss_F=0.7634, Loss_L=0.5196]
+[Fold 2] Epoch 19/20 | Train Loss: Frontal=0.6379, Lateral=0.5579 | Val Loss: Frontal=0.6875, Lateral=0.6225 | ACC_F=0.6047, PREC_F=0.7273, REC_F=0.3636, MCC_F=0.2529 | ACC_L=0.8140, PREC_L=1.0000, REC_L=0.6364, MCC_L=0.6788
+Training: 100%|██████████████| 169/169 [00:56<00:00,  2.99batch/s, LR=5e-6, Loss_F=0.6291, Loss_L=0.5436]
+Validation: 100%|███████████████████████| 43/43 [00:09<00:00,  4.41batch/s, Loss_F=0.6575, Loss_L=0.5194]
+[Fold 2] Epoch 20/20 | Train Loss: Frontal=0.6291, Lateral=0.5436 | Val Loss: Frontal=0.6784, Lateral=0.6289 | ACC_F=0.6744, PREC_F=0.8333, REC_F=0.4545, MCC_F=0.4004 | ACC_L=0.7907, PREC_L=1.0000, REC_L=0.5909, MCC_L=0.6431
+
+[Fold 2] Finished. Best MCC: Frontal=0.4222, Lateral=0.7151
+
+========== Fold 3/5 ==========
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/frontal/final_model.pt
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/lateral/final_model.pt
+
+Starting Fine-Tuning for this fold...
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.03batch/s, LR=5e-6, Loss_F=0.7943, Loss_L=0.6920]
+Validation: 100%|███████████████████████| 42/42 [00:09<00:00,  4.21batch/s, Loss_F=0.5744, Loss_L=1.1743]
+[Fold 3] Epoch 1/20 | Train Loss: Frontal=0.7943, Lateral=0.6920 | Val Loss: Frontal=0.6947, Lateral=0.7079 | ACC_F=0.5476, PREC_F=0.4865, REC_F=1.0000, MCC_F=0.3184 | ACC_L=0.6190, PREC_L=0.5625, REC_L=0.5000, MCC_L=0.2123
+[Fold 3] New best frontal MCC: 0.3184. Saving model.
+[Fold 3] New best lateral MCC: 0.2123. Saving model.
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.03batch/s, LR=5e-6, Loss_F=0.7013, Loss_L=0.6481]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.17batch/s, Loss_F=0.6347, Loss_L=1.0655]
+[Fold 3] Epoch 2/20 | Train Loss: Frontal=0.7013, Lateral=0.6481 | Val Loss: Frontal=0.6721, Lateral=0.6932 | ACC_F=0.5238, PREC_F=0.4545, REC_F=0.5556, MCC_F=0.0550 | ACC_L=0.6190, PREC_L=0.5714, REC_L=0.4444, MCC_L=0.2041
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.00batch/s, LR=5e-6, Loss_F=0.6776, Loss_L=0.6332]
+Validation: 100%|███████████████████████| 42/42 [00:09<00:00,  4.20batch/s, Loss_F=0.6744, Loss_L=0.9722]
+[Fold 3] Epoch 3/20 | Train Loss: Frontal=0.6776, Lateral=0.6332 | Val Loss: Frontal=0.6749, Lateral=0.7167 | ACC_F=0.6190, PREC_F=0.5625, REC_F=0.5000, MCC_F=0.2123 | ACC_L=0.5952, PREC_L=0.5217, REC_L=0.6667, MCC_L=0.2071
+Training: 100%|██████████████| 170/170 [00:57<00:00,  2.95batch/s, LR=5e-6, Loss_F=0.6864, Loss_L=0.6300]
+Validation: 100%|███████████████████████| 42/42 [00:09<00:00,  4.24batch/s, Loss_F=0.6915, Loss_L=1.0887]
+[Fold 3] Epoch 4/20 | Train Loss: Frontal=0.6864, Lateral=0.6300 | Val Loss: Frontal=0.6696, Lateral=0.6767 | ACC_F=0.6905, PREC_F=0.7778, REC_F=0.3889, MCC_F=0.3685 | ACC_L=0.7143, PREC_L=0.7500, REC_L=0.5000, MCC_L=0.4108
+[Fold 3] New best frontal MCC: 0.3685. Saving model.
+[Fold 3] New best lateral MCC: 0.4108. Saving model.
+Training: 100%|██████████████| 170/170 [00:57<00:00,  2.95batch/s, LR=5e-6, Loss_F=0.6856, Loss_L=0.6203]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.15batch/s, Loss_F=0.6818, Loss_L=1.0025]
+[Fold 3] Epoch 5/20 | Train Loss: Frontal=0.6856, Lateral=0.6203 | Val Loss: Frontal=0.6776, Lateral=0.6860 | ACC_F=0.6190, PREC_F=0.5833, REC_F=0.3889, MCC_F=0.1978 | ACC_L=0.6429, PREC_L=0.5652, REC_L=0.7222, MCC_L=0.3038
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.02batch/s, LR=5e-6, Loss_F=0.6817, Loss_L=0.6101]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.18batch/s, Loss_F=0.6735, Loss_L=0.9834]
+[Fold 3] Epoch 6/20 | Train Loss: Frontal=0.6817, Lateral=0.6101 | Val Loss: Frontal=0.6723, Lateral=0.6620 | ACC_F=0.5952, PREC_F=0.5556, REC_F=0.2778, MCC_F=0.1340 | ACC_L=0.7381, PREC_L=0.7059, REC_L=0.6667, MCC_L=0.4621
+[Fold 3] New best lateral MCC: 0.4621. Saving model.
+Training: 100%|██████████████| 170/170 [00:55<00:00,  3.04batch/s, LR=5e-6, Loss_F=0.6806, Loss_L=0.6029]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.16batch/s, Loss_F=0.6568, Loss_L=1.0333]
+[Fold 3] Epoch 7/20 | Train Loss: Frontal=0.6806, Lateral=0.6029 | Val Loss: Frontal=0.6684, Lateral=0.6678 | ACC_F=0.5714, PREC_F=0.5000, REC_F=0.3889, MCC_F=0.1021 | ACC_L=0.6905, PREC_L=0.6471, REC_L=0.6111, MCC_L=0.3641
+Training: 100%|██████████████| 170/170 [00:58<00:00,  2.91batch/s, LR=5e-6, Loss_F=0.6739, Loss_L=0.5876]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.87batch/s, Loss_F=0.6633, Loss_L=0.9394]
+[Fold 3] Epoch 8/20 | Train Loss: Frontal=0.6739, Lateral=0.5876 | Val Loss: Frontal=0.6612, Lateral=0.6345 | ACC_F=0.6667, PREC_F=0.6429, REC_F=0.5000, MCC_F=0.3062 | ACC_L=0.7619, PREC_L=0.7000, REC_L=0.7778, MCC_L=0.5230
+[Fold 3] New best lateral MCC: 0.5230. Saving model.
+Training: 100%|██████████████| 170/170 [00:58<00:00,  2.90batch/s, LR=5e-6, Loss_F=0.6720, Loss_L=0.5810]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.02batch/s, Loss_F=0.6695, Loss_L=0.6812]
+[Fold 3] Epoch 9/20 | Train Loss: Frontal=0.6720, Lateral=0.5810 | Val Loss: Frontal=0.6563, Lateral=0.6383 | ACC_F=0.6667, PREC_F=0.6000, REC_F=0.6667, MCC_F=0.3303 | ACC_L=0.7857, PREC_L=0.6957, REC_L=0.8889, MCC_L=0.5938
+[Fold 3] New best lateral MCC: 0.5938. Saving model.
+Training: 100%|██████████████| 170/170 [00:58<00:00,  2.91batch/s, LR=5e-6, Loss_F=0.6649, Loss_L=0.5813]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.12batch/s, Loss_F=0.6727, Loss_L=0.9586]
+[Fold 3] Epoch 10/20 | Train Loss: Frontal=0.6649, Lateral=0.5813 | Val Loss: Frontal=0.6599, Lateral=0.6383 | ACC_F=0.6429, PREC_F=0.6000, REC_F=0.5000, MCC_F=0.2582 | ACC_L=0.7619, PREC_L=0.7222, REC_L=0.7222, MCC_L=0.5139
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.03batch/s, LR=5e-6, Loss_F=0.6656, Loss_L=0.5822]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.90batch/s, Loss_F=0.6989, Loss_L=1.0663]
+[Fold 3] Epoch 11/20 | Train Loss: Frontal=0.6656, Lateral=0.5822 | Val Loss: Frontal=0.6632, Lateral=0.6781 | ACC_F=0.6190, PREC_F=0.6000, REC_F=0.3333, MCC_F=0.1936 | ACC_L=0.7143, PREC_L=0.6875, REC_L=0.6111, MCC_L=0.4105
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.09batch/s, LR=5e-6, Loss_F=0.6605, Loss_L=0.5753]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.16batch/s, Loss_F=0.6387, Loss_L=0.6406]
+[Fold 3] Epoch 12/20 | Train Loss: Frontal=0.6605, Lateral=0.5753 | Val Loss: Frontal=0.6613, Lateral=0.6291 | ACC_F=0.6190, PREC_F=0.5625, REC_F=0.5000, MCC_F=0.2123 | ACC_L=0.8095, PREC_L=0.8125, REC_L=0.7222, MCC_L=0.6086
+[Fold 3] New best lateral MCC: 0.6086. Saving model.
+Training: 100%|██████████████| 170/170 [01:04<00:00,  2.62batch/s, LR=5e-6, Loss_F=0.6590, Loss_L=0.5815]
+Validation: 100%|███████████████████████| 42/42 [00:11<00:00,  3.73batch/s, Loss_F=0.6178, Loss_L=0.8855]
+[Fold 3] Epoch 13/20 | Train Loss: Frontal=0.6590, Lateral=0.5815 | Val Loss: Frontal=0.6675, Lateral=0.6403 | ACC_F=0.5714, PREC_F=0.5000, REC_F=0.6667, MCC_F=0.1667 | ACC_L=0.7857, PREC_L=0.8000, REC_L=0.6667, MCC_L=0.5594
+Training: 100%|██████████████| 170/170 [01:01<00:00,  2.75batch/s, LR=5e-6, Loss_F=0.6605, Loss_L=0.5565]
+Validation: 100%|███████████████████████| 42/42 [00:12<00:00,  3.44batch/s, Loss_F=0.6760, Loss_L=1.0892]
+[Fold 3] Epoch 14/20 | Train Loss: Frontal=0.6605, Lateral=0.5565 | Val Loss: Frontal=0.6537, Lateral=0.6499 | ACC_F=0.6905, PREC_F=0.7273, REC_F=0.4444, MCC_F=0.3596 | ACC_L=0.7857, PREC_L=0.8462, REC_L=0.6111, MCC_L=0.5650
+Training: 100%|██████████████| 170/170 [01:04<00:00,  2.63batch/s, LR=5e-6, Loss_F=0.6539, Loss_L=0.5751]
+Validation: 100%|███████████████████████| 42/42 [00:12<00:00,  3.40batch/s, Loss_F=0.6677, Loss_L=1.0706]
+[Fold 3] Epoch 15/20 | Train Loss: Frontal=0.6539, Lateral=0.5751 | Val Loss: Frontal=0.6595, Lateral=0.6606 | ACC_F=0.6429, PREC_F=0.6154, REC_F=0.4444, MCC_F=0.2527 | ACC_L=0.7619, PREC_L=0.7857, REC_L=0.6111, MCC_L=0.5103
+Training: 100%|██████████████| 170/170 [01:03<00:00,  2.69batch/s, LR=5e-6, Loss_F=0.6448, Loss_L=0.5694]
+Validation: 100%|███████████████████████| 42/42 [00:11<00:00,  3.55batch/s, Loss_F=0.6569, Loss_L=1.0526]
+[Fold 3] Epoch 16/20 | Train Loss: Frontal=0.6448, Lateral=0.5694 | Val Loss: Frontal=0.6558, Lateral=0.6526 | ACC_F=0.6667, PREC_F=0.5909, REC_F=0.7222, MCC_F=0.3441 | ACC_L=0.7619, PREC_L=0.7857, REC_L=0.6111, MCC_L=0.5103
+Training: 100%|██████████████| 170/170 [01:05<00:00,  2.60batch/s, LR=5e-6, Loss_F=0.6567, Loss_L=0.5676]
+Validation: 100%|███████████████████████| 42/42 [00:11<00:00,  3.73batch/s, Loss_F=0.6061, Loss_L=1.0539]
+[Fold 3] Epoch 17/20 | Train Loss: Frontal=0.6567, Lateral=0.5676 | Val Loss: Frontal=0.6496, Lateral=0.6335 | ACC_F=0.6667, PREC_F=0.6429, REC_F=0.5000, MCC_F=0.3062 | ACC_L=0.7857, PREC_L=0.7647, REC_L=0.7222, MCC_L=0.5601
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.10batch/s, LR=5e-6, Loss_F=0.6346, Loss_L=0.5442]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.11batch/s, Loss_F=0.6606, Loss_L=1.1728]
+[Fold 3] Epoch 18/20 | Train Loss: Frontal=0.6346, Lateral=0.5442 | Val Loss: Frontal=0.6557, Lateral=0.6731 | ACC_F=0.6667, PREC_F=0.6000, REC_F=0.6667, MCC_F=0.3303 | ACC_L=0.7619, PREC_L=0.8333, REC_L=0.5556, MCC_L=0.5173
+Training: 100%|██████████████| 170/170 [00:55<00:00,  3.06batch/s, LR=5e-6, Loss_F=0.6452, Loss_L=0.5439]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.85batch/s, Loss_F=0.6242, Loss_L=1.1445]
+[Fold 3] Epoch 19/20 | Train Loss: Frontal=0.6452, Lateral=0.5439 | Val Loss: Frontal=0.6561, Lateral=0.6910 | ACC_F=0.6905, PREC_F=0.6316, REC_F=0.6667, MCC_F=0.3728 | ACC_L=0.7381, PREC_L=0.7692, REC_L=0.5556, MCC_L=0.4609
+[Fold 3] New best frontal MCC: 0.3728. Saving model.
+Training: 100%|██████████████| 170/170 [00:59<00:00,  2.84batch/s, LR=5e-6, Loss_F=0.6445, Loss_L=0.5453]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.13batch/s, Loss_F=0.6242, Loss_L=1.1874]
+[Fold 3] Epoch 20/20 | Train Loss: Frontal=0.6445, Lateral=0.5453 | Val Loss: Frontal=0.6533, Lateral=0.6968 | ACC_F=0.6905, PREC_F=0.6316, REC_F=0.6667, MCC_F=0.3728 | ACC_L=0.7143, PREC_L=0.8000, REC_L=0.4444, MCC_L=0.4196
+
+[Fold 3] Finished. Best MCC: Frontal=0.3728, Lateral=0.6086
+
+
+Starting Fine-Tuning for this fold...
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.11batch/s, LR=5e-6, Loss_F=0.8122, Loss_L=0.7159]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.09batch/s, Loss_F=0.5241, Loss_L=0.5227]
+[Fold 4] Epoch 1/20 | Train Loss: Frontal=0.8122, Lateral=0.7159 | Val Loss: Frontal=0.7730, Lateral=0.6529 | ACC_F=0.3333, PREC_F=0.2353, REC_F=0.8000, MCC_F=-0.0136 | ACC_L=0.7381, PREC_L=0.4737, REC_L=0.9000, MCC_L=0.5027
+[Fold 4] New best frontal MCC: -0.0136. Saving model.
+[Fold 4] New best lateral MCC: 0.5027. Saving model.
+Training: 100%|██████████████| 170/170 [00:55<00:00,  3.05batch/s, LR=5e-6, Loss_F=0.7010, Loss_L=0.6664]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.15batch/s, Loss_F=0.8603, Loss_L=0.5252]
+[Fold 4] Epoch 2/20 | Train Loss: Frontal=0.7010, Lateral=0.6664 | Val Loss: Frontal=0.7406, Lateral=0.6699 | ACC_F=0.3333, PREC_F=0.2500, REC_F=0.9000, MCC_F=0.0685 | ACC_L=0.6667, PREC_L=0.4167, REC_L=1.0000, MCC_L=0.4841
+[Fold 4] New best frontal MCC: 0.0685. Saving model.
+Training: 100%|██████████████| 170/170 [00:55<00:00,  3.09batch/s, LR=5e-6, Loss_F=0.6870, Loss_L=0.6368]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.99batch/s, Loss_F=0.7970, Loss_L=0.5253]
+[Fold 4] Epoch 3/20 | Train Loss: Frontal=0.6870, Lateral=0.6368 | Val Loss: Frontal=0.7119, Lateral=0.6547 | ACC_F=0.3571, PREC_F=0.2571, REC_F=0.9000, MCC_F=0.1000 | ACC_L=0.6905, PREC_L=0.4286, REC_L=0.9000, MCC_L=0.4472
+[Fold 4] New best frontal MCC: 0.1000. Saving model.
+Training: 100%|██████████████| 170/170 [01:00<00:00,  2.80batch/s, LR=5e-6, Loss_F=0.6932, Loss_L=0.6185]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.04batch/s, Loss_F=0.5541, Loss_L=0.5282]
+[Fold 4] Epoch 4/20 | Train Loss: Frontal=0.6932, Lateral=0.6185 | Val Loss: Frontal=0.6736, Lateral=0.6443 | ACC_F=0.6190, PREC_F=0.3636, REC_F=0.8000, MCC_F=0.3091 | ACC_L=0.7381, PREC_L=0.4762, REC_L=1.0000, MCC_L=0.5590
+[Fold 4] New best frontal MCC: 0.3091. Saving model.
+[Fold 4] New best lateral MCC: 0.5590. Saving model.
+Training: 100%|██████████████| 170/170 [00:55<00:00,  3.06batch/s, LR=5e-6, Loss_F=0.6665, Loss_L=0.6190]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.99batch/s, Loss_F=0.5480, Loss_L=0.5235]
+[Fold 4] Epoch 5/20 | Train Loss: Frontal=0.6665, Lateral=0.6190 | Val Loss: Frontal=0.6771, Lateral=0.6187 | ACC_F=0.5476, PREC_F=0.3200, REC_F=0.8000, MCC_F=0.2332 | ACC_L=0.8095, PREC_L=0.5833, REC_L=0.7000, MCC_L=0.5127
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.00batch/s, LR=5e-6, Loss_F=0.6700, Loss_L=0.6005]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.18batch/s, Loss_F=0.5793, Loss_L=0.5259]
+[Fold 4] Epoch 6/20 | Train Loss: Frontal=0.6700, Lateral=0.6005 | Val Loss: Frontal=0.6734, Lateral=0.6002 | ACC_F=0.5714, PREC_F=0.3182, REC_F=0.7000, MCC_F=0.1972 | ACC_L=0.8095, PREC_L=0.5625, REC_L=0.9000, MCC_L=0.5975
+[Fold 4] New best lateral MCC: 0.5975. Saving model.
+Training: 100%|██████████████| 170/170 [00:55<00:00,  3.04batch/s, LR=5e-6, Loss_F=0.6727, Loss_L=0.6099]
+Validation: 100%|███████████████████████| 42/42 [00:12<00:00,  3.45batch/s, Loss_F=0.5526, Loss_L=0.5276]
+[Fold 4] Epoch 7/20 | Train Loss: Frontal=0.6727, Lateral=0.6099 | Val Loss: Frontal=0.6660, Lateral=0.5893 | ACC_F=0.6190, PREC_F=0.3636, REC_F=0.8000, MCC_F=0.3091 | ACC_L=0.8810, PREC_L=0.7273, REC_L=0.8000, MCC_L=0.6842
+[Fold 4] New best lateral MCC: 0.6842. Saving model.
+Training: 100%|██████████████| 170/170 [01:02<00:00,  2.74batch/s, LR=5e-6, Loss_F=0.6628, Loss_L=0.5903]
+Validation: 100%|███████████████████████| 42/42 [00:11<00:00,  3.80batch/s, Loss_F=0.5482, Loss_L=0.5234]
+[Fold 4] Epoch 8/20 | Train Loss: Frontal=0.6628, Lateral=0.5903 | Val Loss: Frontal=0.6717, Lateral=0.5936 | ACC_F=0.4762, PREC_F=0.2857, REC_F=0.8000, MCC_F=0.1581 | ACC_L=0.8810, PREC_L=0.6923, REC_L=0.9000, MCC_L=0.7140
+[Fold 4] New best lateral MCC: 0.7140. Saving model.
+Training: 100%|██████████████| 170/170 [01:04<00:00,  2.62batch/s, LR=5e-6, Loss_F=0.6688, Loss_L=0.5919]
+Validation: 100%|███████████████████████| 42/42 [00:11<00:00,  3.56batch/s, Loss_F=0.7317, Loss_L=0.5220]
+[Fold 4] Epoch 9/20 | Train Loss: Frontal=0.6688, Lateral=0.5919 | Val Loss: Frontal=0.6723, Lateral=0.6028 | ACC_F=0.5238, PREC_F=0.3214, REC_F=0.9000, MCC_F=0.2767 | ACC_L=0.8810, PREC_L=0.6923, REC_L=0.9000, MCC_L=0.7140
+Training: 100%|██████████████| 170/170 [01:03<00:00,  2.66batch/s, LR=5e-6, Loss_F=0.6566, Loss_L=0.5861]
+Validation: 100%|███████████████████████| 42/42 [00:12<00:00,  3.25batch/s, Loss_F=0.5511, Loss_L=0.5212]
+[Fold 4] Epoch 10/20 | Train Loss: Frontal=0.6566, Lateral=0.5861 | Val Loss: Frontal=0.6766, Lateral=0.5636 | ACC_F=0.5476, PREC_F=0.3043, REC_F=0.7000, MCC_F=0.1711 | ACC_L=0.9286, PREC_L=0.8889, REC_L=0.8000, MCC_L=0.7980
+[Fold 4] New best lateral MCC: 0.7980. Saving model.
+Training: 100%|██████████████| 170/170 [01:04<00:00,  2.65batch/s, LR=5e-6, Loss_F=0.6662, Loss_L=0.5797]
+Validation: 100%|███████████████████████| 42/42 [00:12<00:00,  3.44batch/s, Loss_F=0.5402, Loss_L=0.5201]
+[Fold 4] Epoch 11/20 | Train Loss: Frontal=0.6662, Lateral=0.5797 | Val Loss: Frontal=0.6730, Lateral=0.5780 | ACC_F=0.5476, PREC_F=0.3043, REC_F=0.7000, MCC_F=0.1711 | ACC_L=0.8571, PREC_L=0.7000, REC_L=0.7000, MCC_L=0.6062
+Training: 100%|██████████████| 170/170 [01:02<00:00,  2.74batch/s, LR=5e-6, Loss_F=0.6489, Loss_L=0.5796]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.06batch/s, Loss_F=0.5789, Loss_L=0.5216]
+[Fold 4] Epoch 12/20 | Train Loss: Frontal=0.6489, Lateral=0.5796 | Val Loss: Frontal=0.6739, Lateral=0.6094 | ACC_F=0.5714, PREC_F=0.3462, REC_F=0.9000, MCC_F=0.3234 | ACC_L=0.8095, PREC_L=0.5625, REC_L=0.9000, MCC_L=0.5975
+[Fold 4] New best frontal MCC: 0.3234. Saving model.
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.11batch/s, LR=5e-6, Loss_F=0.6491, Loss_L=0.5704]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.13batch/s, Loss_F=0.5827, Loss_L=0.5211]
+[Fold 4] Epoch 13/20 | Train Loss: Frontal=0.6491, Lateral=0.5704 | Val Loss: Frontal=0.6736, Lateral=0.6391 | ACC_F=0.5476, PREC_F=0.3333, REC_F=0.9000, MCC_F=0.3000 | ACC_L=0.7619, PREC_L=0.5000, REC_L=0.8000, MCC_L=0.4824
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.11batch/s, LR=5e-6, Loss_F=0.6451, Loss_L=0.5549]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.04batch/s, Loss_F=0.5371, Loss_L=0.5193]
+[Fold 4] Epoch 14/20 | Train Loss: Frontal=0.6451, Lateral=0.5549 | Val Loss: Frontal=0.6610, Lateral=0.6006 | ACC_F=0.6190, PREC_F=0.3636, REC_F=0.8000, MCC_F=0.3091 | ACC_L=0.8571, PREC_L=0.6429, REC_L=0.9000, MCC_L=0.6720
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.11batch/s, LR=5e-6, Loss_F=0.6353, Loss_L=0.5576]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.17batch/s, Loss_F=0.5472, Loss_L=0.5192]
+[Fold 4] Epoch 15/20 | Train Loss: Frontal=0.6353, Lateral=0.5576 | Val Loss: Frontal=0.6536, Lateral=0.6204 | ACC_F=0.6429, PREC_F=0.3684, REC_F=0.7000, MCC_F=0.2781 | ACC_L=0.8095, PREC_L=0.5714, REC_L=0.8000, MCC_L=0.5534
+Training: 100%|██████████████| 170/170 [00:53<00:00,  3.20batch/s, LR=5e-6, Loss_F=0.6351, Loss_L=0.5650]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.15batch/s, Loss_F=0.5293, Loss_L=0.5197]
+[Fold 4] Epoch 16/20 | Train Loss: Frontal=0.6351, Lateral=0.5650 | Val Loss: Frontal=0.6628, Lateral=0.6121 | ACC_F=0.6190, PREC_F=0.3333, REC_F=0.6000, MCC_F=0.1936 | ACC_L=0.8333, PREC_L=0.6154, REC_L=0.8000, MCC_L=0.5931
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.11batch/s, LR=5e-6, Loss_F=0.6299, Loss_L=0.5568]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.13batch/s, Loss_F=0.5229, Loss_L=0.5200]
+[Fold 4] Epoch 17/20 | Train Loss: Frontal=0.6299, Lateral=0.5568 | Val Loss: Frontal=0.6764, Lateral=0.5895 | ACC_F=0.5476, PREC_F=0.2632, REC_F=0.5000, MCC_F=0.0535 | ACC_L=0.8571, PREC_L=0.6667, REC_L=0.8000, MCC_L=0.6364
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.14batch/s, LR=5e-6, Loss_F=0.6426, Loss_L=0.5576]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.17batch/s, Loss_F=0.5264, Loss_L=0.5193]
+[Fold 4] Epoch 18/20 | Train Loss: Frontal=0.6426, Lateral=0.5576 | Val Loss: Frontal=0.6623, Lateral=0.5845 | ACC_F=0.6190, PREC_F=0.3333, REC_F=0.6000, MCC_F=0.1936 | ACC_L=0.8333, PREC_L=0.6364, REC_L=0.7000, MCC_L=0.5570
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.14batch/s, LR=5e-6, Loss_F=0.6410, Loss_L=0.5461]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.17batch/s, Loss_F=0.5280, Loss_L=0.5209]
+[Fold 4] Epoch 19/20 | Train Loss: Frontal=0.6410, Lateral=0.5461 | Val Loss: Frontal=0.6721, Lateral=0.6203 | ACC_F=0.5952, PREC_F=0.3478, REC_F=0.8000, MCC_F=0.2835 | ACC_L=0.8095, PREC_L=0.5714, REC_L=0.8000, MCC_L=0.5534
+Training: 100%|██████████████| 170/170 [00:55<00:00,  3.05batch/s, LR=5e-6, Loss_F=0.6368, Loss_L=0.5495]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  4.15batch/s, Loss_F=0.5262, Loss_L=0.5192]
+[Fold 4] Epoch 20/20 | Train Loss: Frontal=0.6368, Lateral=0.5495 | Val Loss: Frontal=0.6730, Lateral=0.5590 | ACC_F=0.5476, PREC_F=0.3043, REC_F=0.7000, MCC_F=0.1711 | ACC_L=0.9286, PREC_L=0.8889, REC_L=0.8000, MCC_L=0.7980
+
+[Fold 4] Finished. Best MCC: Frontal=0.3234, Lateral=0.7980
+
+
+
+========== Fold 5/5 ==========
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/frontal/final_model.pt
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/lateral/final_model.pt
+
+Starting Fine-Tuning for this fold...
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.00batch/s, LR=5e-6, Loss_F=0.7670, Loss_L=0.7018]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.91batch/s, Loss_F=0.5786, Loss_L=1.0235]
+[Fold 5] Epoch 1/20 | Train Loss: Frontal=0.7670, Lateral=0.7018 | Val Loss: Frontal=0.7262, Lateral=0.7542 | ACC_F=0.5476, PREC_F=0.5588, REC_F=0.8261, MCC_F=0.0464 | ACC_L=0.5238, PREC_L=0.5789, REC_L=0.4783, MCC_L=0.0572
+[Fold 5] New best frontal MCC: 0.0464. Saving model.
+[Fold 5] New best lateral MCC: 0.0572. Saving model.
+Training: 100%|██████████████| 170/170 [00:53<00:00,  3.19batch/s, LR=5e-6, Loss_F=0.7212, Loss_L=0.6420]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.87batch/s, Loss_F=0.7001, Loss_L=0.7073]
+[Fold 5] Epoch 2/20 | Train Loss: Frontal=0.7212, Lateral=0.6420 | Val Loss: Frontal=0.7043, Lateral=0.7096 | ACC_F=0.3333, PREC_F=0.4000, REC_F=0.4348, MCC_F=-0.3597 | ACC_L=0.5476, PREC_L=0.5833, REC_L=0.6087, MCC_L=0.0829
+[Fold 5] New best lateral MCC: 0.0829. Saving model.
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.02batch/s, LR=5e-6, Loss_F=0.7009, Loss_L=0.6549]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.89batch/s, Loss_F=0.7641, Loss_L=0.5334]
+[Fold 5] Epoch 3/20 | Train Loss: Frontal=0.7009, Lateral=0.6549 | Val Loss: Frontal=0.7021, Lateral=0.6707 | ACC_F=0.5000, PREC_F=0.6250, REC_F=0.2174, MCC_F=0.0754 | ACC_L=0.6667, PREC_L=0.7143, REC_L=0.6522, MCC_L=0.3349
+[Fold 5] New best frontal MCC: 0.0754. Saving model.
+[Fold 5] New best lateral MCC: 0.3349. Saving model.
+Training: 100%|██████████████| 170/170 [00:52<00:00,  3.21batch/s, LR=5e-6, Loss_F=0.6864, Loss_L=0.6317]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.84batch/s, Loss_F=0.8166, Loss_L=0.5286]
+[Fold 5] Epoch 4/20 | Train Loss: Frontal=0.6864, Lateral=0.6317 | Val Loss: Frontal=0.7180, Lateral=0.6795 | ACC_F=0.4762, PREC_F=0.6000, REC_F=0.1304, MCC_F=0.0387 | ACC_L=0.6190, PREC_L=0.6296, REC_L=0.7391, MCC_L=0.2211
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.12batch/s, LR=5e-6, Loss_F=0.6907, Loss_L=0.6292]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.85batch/s, Loss_F=0.7861, Loss_L=0.5354]
+[Fold 5] Epoch 5/20 | Train Loss: Frontal=0.6907, Lateral=0.6292 | Val Loss: Frontal=0.7166, Lateral=0.6807 | ACC_F=0.4048, PREC_F=0.3750, REC_F=0.1304, MCC_F=-0.1682 | ACC_L=0.6429, PREC_L=0.6429, REC_L=0.7826, MCC_L=0.2706
+Training: 100%|██████████████| 170/170 [00:59<00:00,  2.87batch/s, LR=5e-6, Loss_F=0.6716, Loss_L=0.6121]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.89batch/s, Loss_F=0.7631, Loss_L=0.5403]
+[Fold 5] Epoch 6/20 | Train Loss: Frontal=0.6716, Lateral=0.6121 | Val Loss: Frontal=0.7055, Lateral=0.6818 | ACC_F=0.4286, PREC_F=0.4286, REC_F=0.1304, MCC_F=-0.1070 | ACC_L=0.6667, PREC_L=0.6800, REC_L=0.7391, MCC_L=0.3225
+Training: 100%|██████████████| 170/170 [00:53<00:00,  3.17batch/s, LR=5e-6, Loss_F=0.6760, Loss_L=0.6173]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.88batch/s, Loss_F=0.7629, Loss_L=0.5744]
+[Fold 5] Epoch 7/20 | Train Loss: Frontal=0.6760, Lateral=0.6173 | Val Loss: Frontal=0.7048, Lateral=0.6616 | ACC_F=0.4524, PREC_F=0.5000, REC_F=0.1304, MCC_F=-0.0391 | ACC_L=0.7143, PREC_L=0.7200, REC_L=0.7826, MCC_L=0.4200
+[Fold 5] New best lateral MCC: 0.4200. Saving model.
+Training: 100%|██████████████| 170/170 [00:53<00:00,  3.16batch/s, LR=5e-6, Loss_F=0.6679, Loss_L=0.5949]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.86batch/s, Loss_F=0.7768, Loss_L=0.5263]
+[Fold 5] Epoch 8/20 | Train Loss: Frontal=0.6679, Lateral=0.5949 | Val Loss: Frontal=0.6972, Lateral=0.6791 | ACC_F=0.4524, PREC_F=0.5000, REC_F=0.0870, MCC_F=-0.0310 | ACC_L=0.6905, PREC_L=0.7083, REC_L=0.7391, MCC_L=0.3728
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.02batch/s, LR=5e-6, Loss_F=0.6657, Loss_L=0.5925]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.84batch/s, Loss_F=0.7550, Loss_L=0.5260]
+[Fold 5] Epoch 9/20 | Train Loss: Frontal=0.6657, Lateral=0.5925 | Val Loss: Frontal=0.6951, Lateral=0.6851 | ACC_F=0.5238, PREC_F=0.7143, REC_F=0.2174, MCC_F=0.1498 | ACC_L=0.6905, PREC_L=0.7500, REC_L=0.6522, MCC_L=0.3877
+[Fold 5] New best frontal MCC: 0.1498. Saving model.
+Training: 100%|██████████████| 170/170 [00:55<00:00,  3.05batch/s, LR=5e-6, Loss_F=0.6604, Loss_L=0.5917]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.87batch/s, Loss_F=0.7835, Loss_L=0.5351]
+[Fold 5] Epoch 10/20 | Train Loss: Frontal=0.6604, Lateral=0.5917 | Val Loss: Frontal=0.6811, Lateral=0.6654 | ACC_F=0.5000, PREC_F=0.6667, REC_F=0.1739, MCC_F=0.0976 | ACC_L=0.6905, PREC_L=0.7500, REC_L=0.6522, MCC_L=0.3877
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.12batch/s, LR=5e-6, Loss_F=0.6648, Loss_L=0.5774]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.85batch/s, Loss_F=0.7650, Loss_L=0.6423]
+[Fold 5] Epoch 11/20 | Train Loss: Frontal=0.6648, Lateral=0.5774 | Val Loss: Frontal=0.7057, Lateral=0.6665 | ACC_F=0.4524, PREC_F=0.5000, REC_F=0.1304, MCC_F=-0.0391 | ACC_L=0.7143, PREC_L=0.7200, REC_L=0.7826, MCC_L=0.4200
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.10batch/s, LR=5e-6, Loss_F=0.6536, Loss_L=0.5695]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.85batch/s, Loss_F=0.7477, Loss_L=0.8583]
+[Fold 5] Epoch 12/20 | Train Loss: Frontal=0.6536, Lateral=0.5695 | Val Loss: Frontal=0.6919, Lateral=0.6782 | ACC_F=0.5000, PREC_F=0.6250, REC_F=0.2174, MCC_F=0.0754 | ACC_L=0.6905, PREC_L=0.7500, REC_L=0.6522, MCC_L=0.3877
+Training: 100%|██████████████| 170/170 [00:52<00:00,  3.23batch/s, LR=5e-6, Loss_F=0.6704, Loss_L=0.5781]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.85batch/s, Loss_F=0.7359, Loss_L=0.5483]
+[Fold 5] Epoch 13/20 | Train Loss: Frontal=0.6704, Lateral=0.5781 | Val Loss: Frontal=0.6926, Lateral=0.6755 | ACC_F=0.5238, PREC_F=0.8000, REC_F=0.1739, MCC_F=0.1864 | ACC_L=0.6905, PREC_L=0.7083, REC_L=0.7391, MCC_L=0.3728
+[Fold 5] New best frontal MCC: 0.1864. Saving model.
+Training: 100%|██████████████| 170/170 [00:56<00:00,  2.99batch/s, LR=5e-6, Loss_F=0.6506, Loss_L=0.5802]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.84batch/s, Loss_F=0.7606, Loss_L=0.5492]
+[Fold 5] Epoch 14/20 | Train Loss: Frontal=0.6506, Lateral=0.5802 | Val Loss: Frontal=0.6935, Lateral=0.6784 | ACC_F=0.4762, PREC_F=0.5714, REC_F=0.1739, MCC_F=0.0214 | ACC_L=0.6905, PREC_L=0.7273, REC_L=0.6957, MCC_L=0.3786
+Training: 100%|██████████████| 170/170 [00:57<00:00,  2.98batch/s, LR=5e-6, Loss_F=0.6476, Loss_L=0.5606]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.86batch/s, Loss_F=0.7255, Loss_L=0.8969]
+[Fold 5] Epoch 15/20 | Train Loss: Frontal=0.6476, Lateral=0.5606 | Val Loss: Frontal=0.6918, Lateral=0.6830 | ACC_F=0.5952, PREC_F=0.8000, REC_F=0.3478, MCC_F=0.2835 | ACC_L=0.6905, PREC_L=0.7273, REC_L=0.6957, MCC_L=0.3786
+[Fold 5] New best frontal MCC: 0.2835. Saving model.
+Training: 100%|██████████████| 170/170 [00:55<00:00,  3.08batch/s, LR=5e-6, Loss_F=0.6617, Loss_L=0.5601]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.85batch/s, Loss_F=0.7286, Loss_L=0.5192]
+[Fold 5] Epoch 16/20 | Train Loss: Frontal=0.6617, Lateral=0.5601 | Val Loss: Frontal=0.7132, Lateral=0.6839 | ACC_F=0.4762, PREC_F=0.5714, REC_F=0.1739, MCC_F=0.0214 | ACC_L=0.7381, PREC_L=0.7143, REC_L=0.8696, MCC_L=0.4736
+[Fold 5] New best lateral MCC: 0.4736. Saving model.
+Training: 100%|██████████████| 170/170 [00:52<00:00,  3.22batch/s, LR=5e-6, Loss_F=0.6443, Loss_L=0.5678]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.87batch/s, Loss_F=0.6792, Loss_L=0.6063]
+[Fold 5] Epoch 17/20 | Train Loss: Frontal=0.6443, Lateral=0.5678 | Val Loss: Frontal=0.7004, Lateral=0.6759 | ACC_F=0.4524, PREC_F=0.5000, REC_F=0.3043, MCC_F=-0.0677 | ACC_L=0.7143, PREC_L=0.7200, REC_L=0.7826, MCC_L=0.4200
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.03batch/s, LR=5e-6, Loss_F=0.6442, Loss_L=0.5686]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.88batch/s, Loss_F=0.6682, Loss_L=0.5198]
+[Fold 5] Epoch 18/20 | Train Loss: Frontal=0.6442, Lateral=0.5686 | Val Loss: Frontal=0.6799, Lateral=0.6726 | ACC_F=0.5952, PREC_F=0.8000, REC_F=0.3478, MCC_F=0.2835 | ACC_L=0.7143, PREC_L=0.7200, REC_L=0.7826, MCC_L=0.4200
+Training: 100%|██████████████| 170/170 [00:56<00:00,  3.01batch/s, LR=5e-6, Loss_F=0.6370, Loss_L=0.5539]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.85batch/s, Loss_F=0.7261, Loss_L=0.9205]
+[Fold 5] Epoch 19/20 | Train Loss: Frontal=0.6370, Lateral=0.5539 | Val Loss: Frontal=0.6689, Lateral=0.6868 | ACC_F=0.5714, PREC_F=0.7778, REC_F=0.3043, MCC_F=0.2415 | ACC_L=0.7143, PREC_L=0.8667, REC_L=0.5652, MCC_L=0.4778
+[Fold 5] New best lateral MCC: 0.4778. Saving model.
+Training: 100%|██████████████| 170/170 [00:54<00:00,  3.11batch/s, LR=5e-6, Loss_F=0.6462, Loss_L=0.5465]
+Validation: 100%|███████████████████████| 42/42 [00:10<00:00,  3.84batch/s, Loss_F=0.6944, Loss_L=0.5517]
+[Fold 5] Epoch 20/20 | Train Loss: Frontal=0.6462, Lateral=0.5465 | Val Loss: Frontal=0.6844, Lateral=0.7003 | ACC_F=0.5000, PREC_F=0.6667, REC_F=0.1739, MCC_F=0.0976 | ACC_L=0.6429, PREC_L=0.7000, REC_L=0.6087, MCC_L=0.2919
+
+[Fold 5] Finished. Best MCC: Frontal=0.2835, Lateral=0.4778

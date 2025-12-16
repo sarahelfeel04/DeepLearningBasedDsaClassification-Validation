@@ -1,0 +1,10 @@
+
+Best threshold by MCC (using ensemble probabilities):
+  threshold = 0.440
+  MCC       = 0.6601
+  ACC       = 0.8108
+  Sens      = 0.5882
+  Spec      = 1.0000
+  TP=10, TN=20, FP=0, FN=7
+
+Global AUC (ensemble, independent of threshold) = 0.8794

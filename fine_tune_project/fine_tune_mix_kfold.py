@@ -67,7 +67,7 @@ LABEL_THRESHOLD = (THROMBUS_NO + THROMBUS_YES) / 2  # Midpoint between the two l
 N_FOLDS = 5
 # If you already completed some folds, you can skip them by setting this.
 # 0-based index: e.g. set to 1 to start from Fold 2/5.
-FOLD_START = 1
+FOLD_START = 2
 
 # --- Device Setup ---
 device1 = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")

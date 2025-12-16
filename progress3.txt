@@ -1,0 +1,182 @@
+
+========== Fold 3/5 ==========
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/frontal/final_model.pt
+Unfreezing ALL layers for full fine-tuning on device cuda:0...
+Attempting to load checkpoint from: /media/nami/FastDataSpace/ThromboMap-Validation/Classificator/Models/lateral/final_model.pt
+Unfreezing ALL layers for full fine-tuning on device cuda:1...
+Fold 3 Epoch 1/20 Training: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 365/365 [05:37<00:00,  1.08batch/s, LR=5e-6, Loss_F=0.7129, Loss_L=0.6334]
+
+[Fold 3] --- Epoch 1/20 ---
+Train Loss (Mixed): Frontal=0.7129, Lateral=0.6334
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:39<00:00,  2.29batch/s, Loss_F=0.7990, Loss_L=0.6375]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6750, Lateral=0.6404
+acc_front = 0.6813186813186813 ; prec_front = 0.6623376623376623 ; recall_front = 0.9444444444444444; mcc_front = 0.3291091890434819
+acc_lat = 0.7692307692307693 ; prec_lat = 0.8113207547169812 ; recall_lat = 0.7962962962962963; mcc_lat = 0.523932381793523
+[Fold 3] New best frontal MCC: 0.3291. Saving model.
+[Fold 3] New best lateral MCC: 0.5239. Saving model.
+Fold 3 Epoch 2/20 Training: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 365/365 [03:01<00:00,  2.01batch/s, LR=5e-6, Loss_F=0.6731, Loss_L=0.6181]
+
+[Fold 3] --- Epoch 2/20 ---
+Train Loss (Mixed): Frontal=0.6731, Lateral=0.6181
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:40<00:00,  2.26batch/s, Loss_F=0.7836, Loss_L=1.0880]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6698, Lateral=0.6540
+acc_front = 0.6813186813186813 ; prec_front = 0.6811594202898551 ; recall_front = 0.8703703703703703; mcc_front = 0.3163865196410472
+acc_lat = 0.7362637362637363 ; prec_lat = 0.7777777777777778 ; recall_lat = 0.7777777777777778; mcc_lat = 0.45345345345345345
+Fold 3 Epoch 3/20 Training: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:49<00:00,  2.15batch/s, LR=5e-6, Loss_F=0.6602, Loss_L=0.6098]
+
+[Fold 3] --- Epoch 3/20 ---
+Train Loss (Mixed): Frontal=0.6602, Lateral=0.6098
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:39<00:00,  2.31batch/s, Loss_F=0.8649, Loss_L=1.0243]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6652, Lateral=0.6636
+acc_front = 0.7032967032967034 ; prec_front = 0.68 ; recall_front = 0.9444444444444444; mcc_front = 0.38167974720887327
+acc_lat = 0.7252747252747253 ; prec_lat = 0.8918918918918919 ; recall_lat = 0.6111111111111112; mcc_lat = 0.503003003003003
+[Fold 3] New best frontal MCC: 0.3817. Saving model.
+Fold 3 Epoch 4/20 Training: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:43<00:00,  2.23batch/s, LR=5e-6, Loss_F=0.6476, Loss_L=0.5934]
+
+[Fold 3] --- Epoch 4/20 ---
+Train Loss (Mixed): Frontal=0.6476, Lateral=0.5934
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:40<00:00,  2.23batch/s, Loss_F=0.8980, Loss_L=1.0535]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6594, Lateral=0.6254
+acc_front = 0.7252747252747253 ; prec_front = 0.704225352112676 ; recall_front = 0.9259259259259259; mcc_front = 0.42508042700854126
+acc_lat = 0.7802197802197802 ; prec_lat = 0.84 ; recall_lat = 0.7777777777777778; mcc_lat = 0.5543935698392068
+[Fold 3] New best frontal MCC: 0.4251. Saving model.
+[Fold 3] New best lateral MCC: 0.5544. Saving model.
+Fold 3 Epoch 5/20 Training: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:47<00:00,  2.18batch/s, LR=5e-6, Loss_F=0.6433, Loss_L=0.5883]
+
+[Fold 3] --- Epoch 5/20 ---
+Train Loss (Mixed): Frontal=0.6433, Lateral=0.5883
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:41<00:00,  2.17batch/s, Loss_F=0.9083, Loss_L=0.5589]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6567, Lateral=0.6319
+acc_front = 0.7142857142857143 ; prec_front = 0.7058823529411765 ; recall_front = 0.8888888888888888; mcc_front = 0.39372511933768556
+acc_lat = 0.7802197802197802 ; prec_lat = 0.925 ; recall_lat = 0.6851851851851852; mcc_lat = 0.5978530434771812
+[Fold 3] New best lateral MCC: 0.5979. Saving model.
+Fold 3 Epoch 6/20 Training: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:46<00:00,  2.19batch/s, LR=5e-6, Loss_F=0.6437, Loss_L=0.5825]
+
+[Fold 3] --- Epoch 6/20 ---
+Train Loss (Mixed): Frontal=0.6437, Lateral=0.5825
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:42<00:00,  2.16batch/s, Loss_F=0.9042, Loss_L=0.5947]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6597, Lateral=0.6305
+acc_front = 0.7032967032967034 ; prec_front = 0.6901408450704225 ; recall_front = 0.9074074074074074; mcc_front = 0.3710548420116457
+acc_lat = 0.8021978021978022 ; prec_lat = 0.8913043478260869 ; recall_lat = 0.7592592592592593; mcc_lat = 0.6131737279662356
+[Fold 3] New best lateral MCC: 0.6132. Saving model.
+Fold 3 Epoch 7/20 Training: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:43<00:00,  2.24batch/s, LR=5e-6, Loss_F=0.6336, Loss_L=0.5839]
+
+[Fold 3] --- Epoch 7/20 ---
+Train Loss (Mixed): Frontal=0.6336, Lateral=0.5839
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:42<00:00,  2.14batch/s, Loss_F=0.9454, Loss_L=0.5982]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6559, Lateral=0.6380
+acc_front = 0.7142857142857143 ; prec_front = 0.7058823529411765 ; recall_front = 0.8888888888888888; mcc_front = 0.39372511933768556
+acc_lat = 0.7802197802197802 ; prec_lat = 0.9047619047619048 ; recall_lat = 0.7037037037037037; mcc_lat = 0.5868492234455778
+Fold 3 Epoch 8/20 Training: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:56<00:00,  2.07batch/s, LR=5e-6, Loss_F=0.6369, Loss_L=0.5731]
+
+[Fold 3] --- Epoch 8/20 ---
+Train Loss (Mixed): Frontal=0.6369, Lateral=0.5731
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:41<00:00,  2.18batch/s, Loss_F=0.9239, Loss_L=0.9664]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6559, Lateral=0.6344
+acc_front = 0.7032967032967034 ; prec_front = 0.7014925373134329 ; recall_front = 0.8703703703703703; mcc_front = 0.36765853339108656
+acc_lat = 0.7912087912087912 ; prec_lat = 0.9487179487179487 ; recall_lat = 0.6851851851851852; mcc_lat = 0.6264456087861372
+[Fold 3] New best lateral MCC: 0.6264. Saving model.
+Fold 3 Epoch 9/20 Training: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:45<00:00,  2.21batch/s, LR=5e-6, Loss_F=0.6345, Loss_L=0.5721]
+
+[Fold 3] --- Epoch 9/20 ---
+Train Loss (Mixed): Frontal=0.6345, Lateral=0.5721
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:42<00:00,  2.15batch/s, Loss_F=0.9730, Loss_L=0.5614]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6512, Lateral=0.6276
+acc_front = 0.7252747252747253 ; prec_front = 0.7164179104477612 ; recall_front = 0.8888888888888888; mcc_front = 0.41842776941322446
+acc_lat = 0.8131868131868132 ; prec_lat = 0.8627450980392157 ; recall_lat = 0.8148148148148148; mcc_lat = 0.6191518677269896
+Fold 3 Epoch 10/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:47<00:00,  2.17batch/s, LR=5e-6, Loss_F=0.6316, Loss_L=0.5634]
+
+[Fold 3] --- Epoch 10/20 ---
+Train Loss (Mixed): Frontal=0.6316, Lateral=0.5634
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:44<00:00,  2.05batch/s, Loss_F=0.9951, Loss_L=1.1246]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6589, Lateral=0.6473
+acc_front = 0.7142857142857143 ; prec_front = 0.7 ; recall_front = 0.9074074074074074; mcc_front = 0.3961989907949964
+acc_lat = 0.7692307692307693 ; prec_lat = 0.8666666666666667 ; recall_lat = 0.7222222222222222; mcc_lat = 0.550233682112444
+Fold 3 Epoch 11/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:52<00:00,  2.12batch/s, LR=5e-6, Loss_F=0.6169, Loss_L=0.5604]
+
+[Fold 3] --- Epoch 11/20 ---
+Train Loss (Mixed): Frontal=0.6169, Lateral=0.5604
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:44<00:00,  2.05batch/s, Loss_F=1.0571, Loss_L=0.5265]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6414, Lateral=0.6288
+acc_front = 0.7362637362637363 ; prec_front = 0.7272727272727273 ; recall_front = 0.8888888888888888; mcc_front = 0.44280889340630464
+acc_lat = 0.8021978021978022 ; prec_lat = 0.8913043478260869 ; recall_lat = 0.7592592592592593; mcc_lat = 0.6131737279662356
+[Fold 3] New best frontal MCC: 0.4428. Saving model.
+Fold 3 Epoch 12/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:49<00:00,  2.16batch/s, LR=5e-6, Loss_F=0.6196, Loss_L=0.5567]
+
+[Fold 3] --- Epoch 12/20 ---
+Train Loss (Mixed): Frontal=0.6196, Lateral=0.5567
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:43<00:00,  2.09batch/s, Loss_F=1.0150, Loss_L=0.5195]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6475, Lateral=0.6375
+acc_front = 0.7472527472527473 ; prec_front = 0.7384615384615385 ; recall_front = 0.8888888888888888; mcc_front = 0.4669239959758098
+acc_lat = 0.8021978021978022 ; prec_lat = 0.9090909090909091 ; recall_lat = 0.7407407407407407; mcc_lat = 0.621833428024521
+[Fold 3] New best frontal MCC: 0.4669. Saving model.
+Fold 3 Epoch 13/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:44<00:00,  2.22batch/s, LR=5e-6, Loss_F=0.6177, Loss_L=0.5528]
+
+[Fold 3] --- Epoch 13/20 ---
+Train Loss (Mixed): Frontal=0.6177, Lateral=0.5528
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:42<00:00,  2.14batch/s, Loss_F=1.1018, Loss_L=0.6858]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6456, Lateral=0.6196
+acc_front = 0.7692307692307693 ; prec_front = 0.746268656716418 ; recall_front = 0.9259259259259259; mcc_front = 0.5199662414575003
+acc_lat = 0.8351648351648352 ; prec_lat = 0.9333333333333333 ; recall_lat = 0.7777777777777778; mcc_lat = 0.6844729986599839
+[Fold 3] New best frontal MCC: 0.5200. Saving model.
+[Fold 3] New best lateral MCC: 0.6845. Saving model.
+Fold 3 Epoch 14/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:55<00:00,  2.08batch/s, LR=5e-6, Loss_F=0.6183, Loss_L=0.5465]
+
+[Fold 3] --- Epoch 14/20 ---
+Train Loss (Mixed): Frontal=0.6183, Lateral=0.5465
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:42<00:00,  2.15batch/s, Loss_F=1.0619, Loss_L=0.7729]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6436, Lateral=0.6597
+acc_front = 0.7472527472527473 ; prec_front = 0.7384615384615385 ; recall_front = 0.8888888888888888; mcc_front = 0.4669239959758098
+acc_lat = 0.7362637362637363 ; prec_lat = 0.9166666666666666 ; recall_lat = 0.6111111111111112; mcc_lat = 0.5324338066706119
+Fold 3 Epoch 15/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:52<00:00,  2.12batch/s, LR=5e-6, Loss_F=0.5990, Loss_L=0.5613]
+
+[Fold 3] --- Epoch 15/20 ---
+Train Loss (Mixed): Frontal=0.5990, Lateral=0.5613
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:44<00:00,  2.02batch/s, Loss_F=1.1649, Loss_L=0.5418]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6283, Lateral=0.6424
+acc_front = 0.7912087912087912 ; prec_front = 0.7777777777777778 ; recall_front = 0.9074074074074074; mcc_front = 0.5630253574295426
+acc_lat = 0.7912087912087912 ; prec_lat = 0.9069767441860465 ; recall_lat = 0.7222222222222222; mcc_lat = 0.6042156561338483
+[Fold 3] New best frontal MCC: 0.5630. Saving model.
+Fold 3 Epoch 16/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:49<00:00,  2.15batch/s, LR=5e-6, Loss_F=0.5973, Loss_L=0.5441]
+
+[Fold 3] --- Epoch 16/20 ---
+Train Loss (Mixed): Frontal=0.5973, Lateral=0.5441
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:38<00:00,  2.34batch/s, Loss_F=1.1610, Loss_L=0.5252]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6427, Lateral=0.6316
+acc_front = 0.7582417582417582 ; prec_front = 0.7424242424242424 ; recall_front = 0.9074074074074074; mcc_front = 0.492927810446073
+acc_lat = 0.7912087912087912 ; prec_lat = 0.8571428571428571 ; recall_lat = 0.7777777777777778; mcc_lat = 0.5799451149344533
+Fold 3 Epoch 17/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:53<00:00,  2.11batch/s, LR=5e-6, Loss_F=0.5878, Loss_L=0.5484]
+
+[Fold 3] --- Epoch 17/20 ---
+Train Loss (Mixed): Frontal=0.5878, Lateral=0.5484
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:43<00:00,  2.10batch/s, Loss_F=1.1846, Loss_L=0.5229]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6329, Lateral=0.6084
+acc_front = 0.7692307692307693 ; prec_front = 0.7619047619047619 ; recall_front = 0.8888888888888888; mcc_front = 0.5145529756640853
+acc_lat = 0.8461538461538461 ; prec_lat = 0.9347826086956522 ; recall_lat = 0.7962962962962963; mcc_lat = 0.7026666056645955
+[Fold 3] New best lateral MCC: 0.7027. Saving model.
+Fold 3 Epoch 18/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:55<00:00,  2.08batch/s, LR=5e-6, Loss_F=0.5847, Loss_L=0.5489]
+
+[Fold 3] --- Epoch 18/20 ---
+Train Loss (Mixed): Frontal=0.5847, Lateral=0.5489
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:42<00:00,  2.16batch/s, Loss_F=1.1537, Loss_L=0.5192]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6431, Lateral=0.6310
+acc_front = 0.7472527472527473 ; prec_front = 0.7384615384615385 ; recall_front = 0.8888888888888888; mcc_front = 0.4669239959758098
+acc_lat = 0.8131868131868132 ; prec_lat = 0.8490566037735849 ; recall_lat = 0.8333333333333334; mcc_lat = 0.6146609198395945
+Fold 3 Epoch 19/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:55<00:00,  2.08batch/s, LR=5e-6, Loss_F=0.5797, Loss_L=0.5376]
+
+[Fold 3] --- Epoch 19/20 ---
+Train Loss (Mixed): Frontal=0.5797, Lateral=0.5376
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:41<00:00,  2.19batch/s, Loss_F=1.2444, Loss_L=0.5201]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6397, Lateral=0.6251
+acc_front = 0.7582417582417582 ; prec_front = 0.75 ; recall_front = 0.8888888888888888; mcc_front = 0.4908233635850147
+acc_lat = 0.8241758241758241 ; prec_lat = 0.8958333333333334 ; recall_lat = 0.7962962962962963; mcc_lat = 0.6505043861066125
+Fold 3 Epoch 20/20 Training: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 365/365 [02:52<00:00,  2.11batch/s, LR=5e-6, Loss_F=0.5742, Loss_L=0.5342]
+
+[Fold 3] --- Epoch 20/20 ---
+Train Loss (Mixed): Frontal=0.5742, Lateral=0.5342
+Fold 3 Validation: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 91/91 [00:41<00:00,  2.22batch/s, Loss_F=1.3134, Loss_L=0.5192]
+[Fold 3] Validation Loss (Mixed): Frontal=0.6384, Lateral=0.6397
+acc_front = 0.7472527472527473 ; prec_front = 0.7719298245614035 ; recall_front = 0.8148148148148148; mcc_front = 0.47058313470667956
+acc_lat = 0.8131868131868132 ; prec_lat = 0.9111111111111111 ; recall_lat = 0.7592592592592593; mcc_lat = 0.6397265598108038
+
+[Fold 3] Finished. Best MCC: Frontal=0.5630, Lateral=0.7027

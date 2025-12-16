@@ -220,6 +220,25 @@ def evaluate_single_pair(
                         fn_de += 1
 
             # Track timing and basic prediction info per sample
+            # Determine domain string for CSV
+            domain_str = "china" if is_ch else "german"
+
+            # Extract filenames if present in batch
+            fname_f = ""
+            fname_l = ""
+            if "filename" in batch:
+                v = batch["filename"]
+                if isinstance(v, (list, tuple)):
+                    fname_f = v[0]
+                else:
+                    fname_f = v
+            if "filenameOtherView" in batch:
+                v2 = batch["filenameOtherView"]
+                if isinstance(v2, (list, tuple)):
+                    fname_l = v2[0]
+                else:
+                    fname_l = v2
+
             total_time += elapsed_ms
             n_samples += 1
             per_sample_rows.append(
@@ -237,6 +256,9 @@ def evaluate_single_pair(
                         (is_thrombus_free and estimate_combined == THROMBUS_NO)
                         or (not is_thrombus_free and estimate_combined == THROMBUS_YES)
                     ),
+                    "domain": domain_str,
+                    "filename_frontal": fname_f,
+                    "filename_lateral": fname_l,
                     "time_ms": elapsed_ms,
                 }
             )
@@ -281,6 +303,9 @@ def evaluate_single_pair(
                     "pred_lateral",
                     "pred_combined",
                     "correct_combined",
+                    "domain",
+                    "filename_frontal",
+                    "filename_lateral",
                     "time_ms",
                 ],
             )
@@ -456,6 +481,24 @@ def evaluate_ensemble(
                         fn_ch += 1
                     else:
                         fn_de += 1
+
+            # For CSV: domain + filenames
+            domain_str = "china" if is_ch else "german"
+            fname_f = ""
+            fname_l = ""
+            if "filename" in batch:
+                v = batch["filename"]
+                if isinstance(v, (list, tuple)):
+                    fname_f = v[0]
+                else:
+                    fname_f = v
+            if "filenameOtherView" in batch:
+                v2 = batch["filenameOtherView"]
+                if isinstance(v2, (list, tuple)):
+                    fname_l = v2[0]
+                else:
+                    fname_l = v2
+
             total_time += elapsed_ms
             n_samples += 1
             per_sample_rows.append(
@@ -471,6 +514,9 @@ def evaluate_ensemble(
                         (is_thrombus_free and estimate_combined == THROMBUS_NO)
                         or (not is_thrombus_free and estimate_combined == THROMBUS_YES)
                     ),
+                    "domain": domain_str,
+                    "filename_frontal": fname_f,
+                    "filename_lateral": fname_l,
                     "time_ms": elapsed_ms,
                 }
             )
@@ -526,6 +572,9 @@ def evaluate_ensemble(
                     "prob_combined",
                     "pred_combined",
                     "correct_combined",
+                    "domain",
+                    "filename_frontal",
+                    "filename_lateral",
                     "time_ms",
                 ],
             )
@@ -696,12 +745,20 @@ def main():
                     "spec_ch",
                     "mcc_ch",
                     "auc_ch",
+                    "tp_ch",
+                    "tn_ch",
+                    "fp_ch",
+                    "fn_ch",
                     # German domain (combined)
                     "acc_de",
                     "sens_de",
                     "spec_de",
                     "mcc_de",
                     "auc_de",
+                    "tp_de",
+                    "tn_de",
+                    "fp_de",
+                    "fn_de",
                 ]
             )
             for r in per_fold_results:
@@ -734,11 +791,19 @@ def main():
                         r["spec_ch"],
                         r["mcc_ch"],
                         r["auc_ch"] if r["auc_ch"] is not None else "",
+                        r["tp_ch"],
+                        r["tn_ch"],
+                        r["fp_ch"],
+                        r["fn_ch"],
                         r["acc_de"],
                         r["sens_de"],
                         r["spec_de"],
                         r["mcc_de"],
                         r["auc_de"] if r["auc_de"] is not None else "",
+                        r["tp_de"],
+                        r["tn_de"],
+                        r["fp_de"],
+                        r["fn_de"],
                     ]
                 )
         print(f"\nPer-fold test summary saved to: {summary_file}")
@@ -816,6 +881,84 @@ def main():
             f"ACC_DE={ensemble_result['acc_de']:.4f}, SEN_DE={ensemble_result['sens_de']:.4f}, SPEC_DE={ensemble_result['spec_de']:.4f}, "
             f"avg_time_per_sample_ms={ensemble_result['avg_time_ms']:.2f}"
         )
+
+        # Save ensemble summary as CSV alongside kfold_test_summary
+        ensemble_summary_file = os.path.join(K_FOLD_MODELS_PATH, "kfold_ensemble_summary.csv")
+        with open(ensemble_summary_file, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(
+                [
+                    "loss_combined",
+                    "acc_global",
+                    "prec_global",
+                    "rec_global",
+                    "mcc_global",
+                    "auc_global",
+                    "avg_time_ms",
+                    "sens_combined",
+                    "spec_combined",
+                    "tp_combined",
+                    "tn_combined",
+                    "fp_combined",
+                    "fn_combined",
+                    # Chinese domain
+                    "acc_ch",
+                    "sens_ch",
+                    "spec_ch",
+                    "mcc_ch",
+                    "auc_ch",
+                    "tp_ch",
+                    "tn_ch",
+                    "fp_ch",
+                    "fn_ch",
+                    # German domain
+                    "acc_de",
+                    "sens_de",
+                    "spec_de",
+                    "mcc_de",
+                    "auc_de",
+                    "tp_de",
+                    "tn_de",
+                    "fp_de",
+                    "fn_de",
+                ]
+            )
+            writer.writerow(
+                [
+                    ensemble_result["avg_loss_combined"],
+                    ensemble_result["acc"],
+                    ensemble_result["prec"],
+                    ensemble_result["rec"],
+                    ensemble_result["mcc"],
+                    ensemble_result["auc"] if ensemble_result["auc"] is not None else "",
+                    ensemble_result["avg_time_ms"],
+                    ensemble_result["sens_combined"],
+                    ensemble_result["spec_combined"],
+                    ensemble_result["tp_combined"],
+                    ensemble_result["tn_combined"],
+                    ensemble_result["fp_combined"],
+                    ensemble_result["fn_combined"],
+                    ensemble_result["acc_ch"],
+                    ensemble_result["sens_ch"],
+                    ensemble_result["spec_ch"],
+                    ensemble_result["mcc_ch"],
+                    ensemble_result["auc_ch"] if ensemble_result["auc_ch"] is not None else "",
+                    ensemble_result["tp_ch"],
+                    ensemble_result["tn_ch"],
+                    ensemble_result["fp_ch"],
+                    ensemble_result["fn_ch"],
+                    ensemble_result["acc_de"],
+                    ensemble_result["sens_de"],
+                    ensemble_result["spec_de"],
+                    ensemble_result["mcc_de"],
+                    ensemble_result["auc_de"] if ensemble_result["auc_de"] is not None else "",
+                    ensemble_result["tp_de"],
+                    ensemble_result["tn_de"],
+                    ensemble_result["fp_de"],
+                    ensemble_result["fn_de"],
+                ]
+            )
+        print(f"Ensemble summary saved to: {ensemble_summary_file}")
 
 
 if __name__ == "__main__":

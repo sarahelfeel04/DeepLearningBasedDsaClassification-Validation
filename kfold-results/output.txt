@@ -1,0 +1,61 @@
+python -m fine_tune_project.evaluation.evaluate_kfold_mixed_models
+Preparing CHINESE test split...
+Loading GERMAN sequences and preparing test split...
+[GermanData] Loaded 287 sequences from annotations.
+[GermanData] Patients -> train: 125, val: 26, test: 27
+[GermanData] Sequences -> train: 205, val: 39, test: 43
+
+=== Evaluating Fold 1 ===
+Frontal checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/frontal_fine_tuned_best_mcc_fold_1.pt
+Lateral checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/lateral_fine_tuned_best_mcc_fold_1.pt
+Testing: 100%|████████████████████████████████████████████████████████| 80/80 [00:18<00:00,  4.27batch/s]
+Per-sample predictions for fold 1 saved to: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/kfold_predictions_fold_1.csv
+Fold 1 -> MCC_front=0.1903, MCC_lat=0.6366, AUC_global=0.8414, AUC_CN=0.7853, AUC_DE=0.8667, ACC_CN=0.7568, SEN_CN=0.5882, SPEC_CN=0.9000, ACC_DE=0.7442, SEN_DE=0.7000, SPEC_DE=0.8462, avg_time_per_sample_ms=82.70
+
+=== Evaluating Fold 2 ===
+Frontal checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/frontal_fine_tuned_best_mcc_fold_2.pt
+Lateral checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/lateral_fine_tuned_best_mcc_fold_2.pt
+Testing: 100%|████████████████████████████████████████████████████████| 80/80 [00:18<00:00,  4.33batch/s]
+Per-sample predictions for fold 2 saved to: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/kfold_predictions_fold_2.csv
+Fold 2 -> MCC_front=0.5406, MCC_lat=0.7421, AUC_global=0.9233, AUC_CN=0.9353, AUC_DE=0.9359, ACC_CN=0.8649, SEN_CN=0.8235, SPEC_CN=0.9000, ACC_DE=0.8837, SEN_DE=0.9000, SPEC_DE=0.8462, avg_time_per_sample_ms=67.50
+
+=== Evaluating Fold 3 ===
+Frontal checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/frontal_fine_tuned_best_mcc_fold_3.pt
+Lateral checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/lateral_fine_tuned_best_mcc_fold_3.pt
+Testing: 100%|████████████████████████████████████████████████████████| 80/80 [00:18<00:00,  4.28batch/s]
+Per-sample predictions for fold 3 saved to: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/kfold_predictions_fold_3.csv
+Fold 3 -> MCC_front=0.5028, MCC_lat=0.7364, AUC_global=0.9226, AUC_CN=0.8706, AUC_DE=0.9564, ACC_CN=0.8108, SEN_CN=0.7647, SPEC_CN=0.8500, ACC_DE=0.8837, SEN_DE=0.9000, SPEC_DE=0.8462, avg_time_per_sample_ms=68.18
+
+=== Evaluating Fold 4 ===
+Frontal checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/frontal_fine_tuned_best_mcc_fold_4.pt
+Lateral checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/lateral_fine_tuned_best_mcc_fold_4.pt
+Testing: 100%|████████████████████████████████████████████████████████| 80/80 [00:18<00:00,  4.31batch/s]
+Per-sample predictions for fold 4 saved to: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/kfold_predictions_fold_4.csv
+Fold 4 -> MCC_front=0.5358, MCC_lat=0.7575, AUC_global=0.9355, AUC_CN=0.9294, AUC_DE=0.9538, ACC_CN=0.8649, SEN_CN=0.7647, SPEC_CN=0.9500, ACC_DE=0.8605, SEN_DE=0.8667, SPEC_DE=0.8462, avg_time_per_sample_ms=69.79
+
+=== Evaluating Fold 5 ===
+Frontal checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/frontal_fine_tuned_best_mcc_fold_5.pt
+Lateral checkpoint: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/lateral_fine_tuned_best_mcc_fold_5.pt
+Testing:  18%|█████████▊                                              | 14/80 [00:03<00:08,  7.37batch/s]Testing: 100%|████████████████████████████████████████████████████████| 80/80 [00:18<00:00,  4.32batch/s]
+Per-sample predictions for fold 5 saved to: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/kfold_predictions_fold_5.csv
+Fold 5 -> MCC_front=0.3966, MCC_lat=0.7462, AUC_global=0.8878, AUC_CN=0.8324, AUC_DE=0.9077, ACC_CN=0.7838, SEN_CN=0.6471, SPEC_CN=0.9000, ACC_DE=0.8605, SEN_DE=0.8667, SPEC_DE=0.8462, avg_time_per_sample_ms=68.77
+
+Per-fold test summary saved to: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/kfold_test_summary.csv
+
+=== Per-fold MCC, AUC and domain metrics (Test set) ===
+Fold 1: MCC_front=0.1903, MCC_lat=0.6366, AUC_global=0.8414, AUC_CN=0.7853, AUC_DE=0.8667, ACC_CN=0.7568, SEN_CN=0.5882, SPEC_CN=0.9000, ACC_DE=0.7442, SEN_DE=0.7000, SPEC_DE=0.8462, avg_time_ms=82.70
+Fold 2: MCC_front=0.5406, MCC_lat=0.7421, AUC_global=0.9233, AUC_CN=0.9353, AUC_DE=0.9359, ACC_CN=0.8649, SEN_CN=0.8235, SPEC_CN=0.9000, ACC_DE=0.8837, SEN_DE=0.9000, SPEC_DE=0.8462, avg_time_ms=67.50
+Fold 3: MCC_front=0.5028, MCC_lat=0.7364, AUC_global=0.9226, AUC_CN=0.8706, AUC_DE=0.9564, ACC_CN=0.8108, SEN_CN=0.7647, SPEC_CN=0.8500, ACC_DE=0.8837, SEN_DE=0.9000, SPEC_DE=0.8462, avg_time_ms=68.18
+Fold 4: MCC_front=0.5358, MCC_lat=0.7575, AUC_global=0.9355, AUC_CN=0.9294, AUC_DE=0.9538, ACC_CN=0.8649, SEN_CN=0.7647, SPEC_CN=0.9500, ACC_DE=0.8605, SEN_DE=0.8667, SPEC_DE=0.8462, avg_time_ms=69.79
+Fold 5: MCC_front=0.3966, MCC_lat=0.7462, AUC_global=0.8878, AUC_CN=0.8324, AUC_DE=0.9077, ACC_CN=0.7838, SEN_CN=0.6471, SPEC_CN=0.9000, ACC_DE=0.8605, SEN_DE=0.8667, SPEC_DE=0.8462, avg_time_ms=68.77
+
+Average MCC_front=0.4332 ± 0.1321, Average MCC_lat=0.7238 ± 0.0441
+Average AUC=0.9021 ± 0.0343
+Average time per sample=71.39 ms ± 5.71 ms
+
+Best fold by mean MCC(front,lat): Fold 4 (MCC_front=0.5358, MCC_lat=0.7575)
+
+=== Evaluating Ensemble of folds (averaged probabilities) ===
+Testing (Ensemble):  22%|██████████▏                                  | 18/80 [00:09<00:24,  2.58batch/s]Testing (Ensemble): 100%|█████████████████████████████████████████████| 80/80 [00:30<00:00,  2.62batch/s]
+Per-sample predictions for ensemble saved to: /media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/DeepLearningBasedDsaClassification-Validation/fine_tuned_models/china_german_mixed_kfold/kfold_ensemble_predictions.csv
+Ensemble -> Loss_combined=0.6005, Accuracy=0.8500, Precision=0.9268, Recall=0.8085, MCC=0.7067, AUC=0.9265, AUC_CN=0.9059, AUC_DE=0.9436, ACC_CN=0.8378, SEN_CN=0.7059, SPEC_CN=0.9500, ACC_DE=0.8605, SEN_DE=0.8667, SPEC_DE=0.8462, avg_time_per_sample_ms=340.40

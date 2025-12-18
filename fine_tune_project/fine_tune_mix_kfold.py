@@ -38,7 +38,7 @@ from .GermanDataUtils import (
 DATA_ROOT_PATH_CHINA = "/media/nami/Volume/ThromboMap/datasets/FirstChannel-CorrectRange-uint16-reannotated"
 
 # 2. German Data Root Path
-DATA_ROOT_PATH_GERMAN = "/media/nami/FastDataSpace/ThromboMap-Validation/dataClinic2024"
+DATA_ROOT_PATH_GERMAN = "/media/nami/Volume/ThromboMap/dataClinic2024"
 GERMAN_ANNOTATIONS_CSV = (
     "/media/nami/FastDataSpace/ThromboMap-Validation/original-train-repo/"
     "DeepLearningBasedDsaClassification-Validation/final_annotations_deutsch_2024.csv"
